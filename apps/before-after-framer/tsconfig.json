@@ -1,0 +1,15 @@
+{
+  "extends": "@flowbase/tsconfig/base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx"
+  },
+  "include": ["src"]
+}
+//
+// "resolveJsonModule": true,
+// "allowSyntheticDefaultImports": true,
+// "noEmit": true,
+// "useDefineForClassFields": true,
