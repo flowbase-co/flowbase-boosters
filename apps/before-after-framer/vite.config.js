@@ -1,8 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import removeAttributes from 'vite-plugin-react-remove-attributes'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    removeAttributes.default({
+      attributes: ['data-testid'],
+    }),
+  ],
+  server: {
+    host: true,
+  },
   test: {
     globals: true,
     environment: 'jsdom',

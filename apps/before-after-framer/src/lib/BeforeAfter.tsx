@@ -57,28 +57,48 @@ export const BeforeAfter: React.FC<Props> = (props) => {
   }
 
   const inner = useRef<HTMLDivElement>(null)
+  const input = useRef<HTMLInputElement>(null)
   const control = useRef<HTMLDivElement>(null)
+  const container = useRef<HTMLDivElement>(null)
 
   const labelLeft = useRef<HTMLDivElement>(null)
   const labelRight = useRef<HTMLDivElement>(null)
 
-  const setPosition = (value: string) => {
+  const setPosition = (value: number) => {
     inner.current!.style.clipPath = `inset(0px 0px 0px ${value}%)`
     control.current!.style.left = `${value}%`
   }
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setPosition(event.target.value)
+  const setInputPosition = (value: number) =>
+    (input.current!.value = `${value}`)
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPosition(+event.target.value)
+  }
 
   useEffect(() => {
-    setPosition(`${props.position}`)
+    setPosition(props.position)
   }, [props.position])
 
   useEffect(() => {
+    initThumbSize()
+
     if (props.position !== START_POSITION) {
-      setPosition(`${props.position}`)
+      setPosition(props.position)
+      setInputPosition(props.position)
     }
   }, [])
+
+  const initThumbSize = () => {
+    const handleEl = control.current?.firstChild as HTMLElement
+
+    if (container.current && handleEl) {
+      container.current.style.setProperty(
+        '--thumb-size',
+        `${handleEl.clientWidth}px`
+      )
+    }
+  }
 
   const enableAnimation = () => {
     inner.current!.style.transition = 'clip-path 0.3s'
@@ -95,10 +115,12 @@ export const BeforeAfter: React.FC<Props> = (props) => {
 
     switch (position) {
       case LabelPosition.Left:
-        setPosition('0')
+        setPosition(0)
+        setInputPosition(0)
         break
       case LabelPosition.Right:
-        setPosition('100')
+        setPosition(100)
+        setInputPosition(100)
         break
     }
 
@@ -106,7 +128,11 @@ export const BeforeAfter: React.FC<Props> = (props) => {
   }
 
   return (
-    <Container borderRadius={props.radius} background={props.bg}>
+    <Container
+      ref={container}
+      borderRadius={props.radius}
+      background={props.bg}
+    >
       <LabelWrapper
         ref={labelLeft}
         hp="left"
@@ -155,6 +181,7 @@ export const BeforeAfter: React.FC<Props> = (props) => {
       <Input
         data-testid="input"
         type="range"
+        ref={input}
         min="0"
         max="100"
         onChange={onChange}
@@ -223,7 +250,6 @@ const Control = styled.div<{ color: string; width: number }>`
     top: 0;
 
     width: ${(p) => p.width}px;
-
     background: ${(p) => p.color};
 
     transform: translateX(-50%);
@@ -242,6 +268,12 @@ const Input = styled.input`
   touch-action: auto;
   width: calc(100% + 2px);
   z-index: 2;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: calc(var(--thumb-size) * 2);
+    height: calc(var(--thumb-size) * 1.5);
+  }
 `
 
 const Handle = styled.div`
@@ -290,11 +322,10 @@ const LabelWrapper = styled.div<{
   position: absolute;
   z-index: 3;
 
+  cursor: pointer;
+
   ${(p) => `${p.vp}: ${p.y}px;`}
   ${(p) => `${p.hp}: ${p.x}px;`}
-
-  transition: opacity 0.1s;
-  cursor: pointer;
 `
 
 const Label = styled.div`

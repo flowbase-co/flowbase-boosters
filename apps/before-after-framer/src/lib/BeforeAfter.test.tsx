@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import { BeforeAfter } from '.'
+import { BeforeAfter } from './BeforeAfter'
 
 const settings = {
   left: {
@@ -9,14 +9,27 @@ const settings = {
   right: {
     src: 'https://assets.website-files.com/61dce392ca43558990b49df0/61dcea1ac8725a36fc41cab4_Slide%202.png',
   },
-  customHandle: false,
   position: 25,
   radius: 0,
+  bg: '#',
+  customHandle: false,
+  customLabel: false,
+  label: {
+    position: 'bottom',
+    before: 'Before',
+    after: 'After',
+    x: 100,
+    y: 200,
+  },
+  line: {
+    color: 'rgba(255, 255, 255, 0.4)',
+    width: 1,
+  },
 }
 
 describe('App', () => {
-  beforeEach(() => {
-    render(<BeforeAfter {...settings} />)
+  beforeEach(async () => {
+    await render(<BeforeAfter {...settings} />)
   })
 
   it('should render the left image', async () => {
@@ -44,6 +57,15 @@ describe('App', () => {
     const inner = await screen.findByTestId<HTMLElement>('inner')
 
     expect(inner).toBeInTheDocument()
-    expect(inner.style.width).toEqual('25%')
+    expect(inner.style.clipPath).toEqual(
+      `inset(0px 0px 0px ${settings.position}%)`
+    )
+  })
+
+  it('should set start position to range input', async () => {
+    const input = await screen.findByTestId<HTMLInputElement>('input')
+
+    expect(input).toBeInTheDocument()
+    expect(input.value).toEqual('25')
   })
 })

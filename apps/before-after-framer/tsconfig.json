@@ -8,8 +8,3 @@
   },
   "include": ["src"]
 }
-//
-// "resolveJsonModule": true,
-// "allowSyntheticDefaultImports": true,
-// "noEmit": true,
-// "useDefineForClassFields": true,
