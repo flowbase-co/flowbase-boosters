@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowbase Boosters - Countdown</title>
+  </head>
+  <body>
+    <div id="root">
+      <div id="days-test"></div>
+      <div id="hours"></div>
+      <div id="minutes"></div>
+      <div id="seconds"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        CountdownTimerFlowbase('December 31, 2025 23:59:59')
+      })
+
+      // jQuery. Webflow version
+      // $(document).ready(() => {
+      //   CountdownTimerFlowbase('December 31, 2025 23:59:59')
+      // })
+    </script>
+  </body>
+</html>
