@@ -7,6 +7,11 @@ interface Options {
   onComplete?: () => void
 }
 
+const day = 1000 * 60 * 60 * 24
+const hour = 1000 * 60 * 60
+const minute = 1000 * 60
+const second = 1000
+
 export const CountdownTimerFlowbase = (
   expiredDate: string,
   options: Options = {}
@@ -39,11 +44,6 @@ export const CountdownTimerFlowbase = (
   const countdownInterval = setInterval(() => {
     const currentDate = new Date().getTime()
     const distance = targetDate - currentDate
-
-    const day = 1000 * 60 * 60 * 24
-    const hour = 1000 * 60 * 60
-    const minute = 1000 * 60
-    const second = 1000
 
     if (daysEl) {
       daysEl.innerText = `${Math.floor(distance / day)}`
