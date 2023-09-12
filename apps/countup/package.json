@@ -1,0 +1,16 @@
+{
+  "name": "@flowbase/countup",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@flowbase/tsconfig": "*",
+    "counterup2": "^2.0.2"
+  },
+  "devDependencies": {
+    "vite": "^4.2.1"
+  }
+}

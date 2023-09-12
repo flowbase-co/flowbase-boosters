@@ -4,8 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "test": "vitest"
+    "build": "vite build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",

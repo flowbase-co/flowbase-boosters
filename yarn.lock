@@ -1135,6 +1135,11 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
+counterup2@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/counterup2/-/counterup2-2.0.2.tgz#f7475f8b738599a081355fa67f6e20e0c70d50d8"
+  integrity sha512-+drmqOOcOa17KJG9o5+wGuEgLVh4wdb2pkpGlCu3MtQ2idB73V8yJEb8WyINZ1+Fjy7dLiWKa0wihvYzk/n32A==
+
 css.escape@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
