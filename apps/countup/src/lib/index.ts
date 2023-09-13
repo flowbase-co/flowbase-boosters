@@ -1,3 +1,4 @@
+import { onLoad } from './utils'
 import { CountupFlowbase } from './countup'
 
-window.CountupFlowbase = CountupFlowbase
+onLoad(CountupFlowbase)
