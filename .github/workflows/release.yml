@@ -1,10 +1,6 @@
 name: Release
 
-on:
-  workflow_dispatch:
-    branches:
-      - main
-      - develop
+on: workflow_dispatch
 
 jobs:
   build:
@@ -32,9 +28,12 @@ jobs:
       - name: Test
         run: yarn test
 
-      - name: Publish
-        uses: cloudflare/wrangler-action@v3
+      - name: Create Release Pull Request or Publish to Github Registry
+        uses: changesets/action@v1
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./dist --project-name=boosters --branch=${{ github.ref_name }} --commit-dirty=true
+          publish: yarn run release
+          version: yarn run version-packages
+          commit: 'chore: release package(s)'
+          title: 'chore: release package(s)'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
