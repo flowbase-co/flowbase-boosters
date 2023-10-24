@@ -6,15 +6,17 @@
     <title>Flowbase Boosters - Countup</title>
   </head>
   <body>
-    <div fb-count>2,351</div>
-    <div fb-count fb-count-time="1200" fb-count-delay="200">52,351</div>
-    <div fb-count fb-count-time="1000" fb-count-delay="50">312.45</div>
+    <div fb-count fb-count-target="2,351">0</div>
+    <div fb-count fb-count-target="312.45">0</div>
+
+    <div fb-count fb-count-target="2,351">2,351</div>
+    <div fb-count fb-count-target="312.45">2,351</div>
+
+    <div fb-count fb-count-target="52,351" fb-count-delay="2000">0</div>
+    <div fb-count fb-count-target="52,351" fb-count-delay="2000"> 52,351 </div>
+
+    <div fb-count fb-count-target="52,351" fb-count-time="4000">52,351</div>
 
     <script type="module" src="/src/main.ts"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        CountupFlowbase()
-      })
-    </script>
   </body>
 </html>

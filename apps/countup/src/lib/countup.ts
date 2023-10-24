@@ -1,14 +1,39 @@
 import counterUp from 'counterup2'
 
-enum CountupAttrsNames {
-  root = 'fb-count',
-  time = 'fb-count-time',
-  delay = 'fb-count-delay',
+enum CountupAttrNames {
+  Root = 'fb-count',
+  Target = 'fb-count-target',
+  Time = 'fb-count-time',
+  Delay = 'fb-count-delay',
 }
 
 const defaultValues = {
-  time: 1000,
-  delay: 16,
+  target: 1000,
+  time: 1500,
+  delay: 0,
+}
+
+const startCounterUp = (counter: HTMLElement) => {
+  if (!counter) return
+
+  const target =
+    counter.getAttribute(CountupAttrNames.Target) || defaultValues.target
+  const time = counter.hasAttribute(CountupAttrNames.Time)
+    ? Number(counter.getAttribute(CountupAttrNames.Time))
+    : defaultValues.time
+  const delay = counter.hasAttribute(CountupAttrNames.Delay)
+    ? Number(counter.getAttribute(CountupAttrNames.Delay))
+    : defaultValues.delay
+
+  const start = () => {
+    counter.innerHTML = target.toString()
+
+    counterUp(counter, {
+      duration: time,
+    })
+  }
+
+  delay ? setTimeout(start, delay) : start()
 }
 
 const observer = new IntersectionObserver(
@@ -23,22 +48,9 @@ const observer = new IntersectionObserver(
   { threshold: 1 }
 )
 
-const startCounterUp = (counter: HTMLElement) => {
-  const time =
-    Number(counter?.getAttribute(CountupAttrsNames.time)) || defaultValues.time
-  const delay =
-    Number(counter?.getAttribute(CountupAttrsNames.delay)) ||
-    defaultValues.delay
-
-  counterUp(counter, {
-    duration: time,
-    delay,
-  })
-}
-
 export const CountupFlowbase = async () => {
   const counters = document.querySelectorAll<HTMLElement>(
-    `[${CountupAttrsNames.root}]`
+    `[${CountupAttrNames.Root}]`
   )
 
   counters.forEach((counter) => observer.observe(counter))

@@ -1,3 +1,5 @@
 import { CountupFlowbase } from './countup'
 
-window.CountupFlowbase = CountupFlowbase
+document.readyState === 'complete'
+  ? CountupFlowbase()
+  : window.addEventListener('load', CountupFlowbase)
