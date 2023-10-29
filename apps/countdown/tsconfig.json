@@ -1,5 +1,5 @@
 {
-  "extends": "@flowbase/tsconfig/base.json",
+  "extends": "@flowbase-co/tsconfig/base.json",
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",

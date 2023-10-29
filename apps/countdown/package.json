@@ -1,15 +1,14 @@
 {
-  "name": "@flowbase/countdown",
+  "name": "@flowbase-co/boosters-countdown",
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
-  "dependencies": {
-    "@flowbase/tsconfig": "*"
-  },
   "devDependencies": {
+    "@flowbase-co/tsconfig": "1.0.0",
     "vite": "^4.2.1"
   }
 }

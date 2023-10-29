@@ -1,5 +1,5 @@
 import { BeforeAfter as Component, type Props } from './BeforeAfter'
-import { OptimizationFriendly } from '@flowbase/framer/components/optimization-friendly'
+import { OptimizationFriendly } from '@flowbase-co/framer/components/optimization-friendly'
 
 export { propertyControls } from './property-controls'
 
