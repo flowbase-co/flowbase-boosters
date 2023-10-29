@@ -1,6 +1,7 @@
 {
-  "name": "@flowbase/countdown-framer",
+  "name": "@flowbase-co/boosters-countdown-framer",
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,10 +10,10 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@flowbase/framer": "*",
-    "@flowbase/tsconfig": "*"
+    "@flowbase-co/framer": "1.0.0"
   },
   "devDependencies": {
+    "@flowbase-co/tsconfig": "1.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.31",

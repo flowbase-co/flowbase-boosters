@@ -11,6 +11,5 @@ export default defineConfig({
       name: 'countup',
       fileName: () => 'countup.js',
     },
-    outDir: '../../dist',
   },
 })

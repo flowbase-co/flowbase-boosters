@@ -11,6 +11,5 @@ export default defineConfig({
       name: 'countdown',
       fileName: () => 'countdown.js',
     },
-    outDir: '../../dist',
   },
 })

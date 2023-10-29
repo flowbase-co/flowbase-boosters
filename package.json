@@ -1,7 +1,15 @@
 {
-  "name": "flowbase-boosters",
-  "version": "0.0.0",
+  "name": "@flowbase-co/flowbase-boosters",
+  "homepage": "https://www.flowbase.co/",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
+  },
+  "author": {
+    "name": "Flowbase",
+    "url": "https://www.flowbase.co/"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -10,12 +18,14 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "test": "turbo run test",
-    "lint": "turbo run lint",
     "version": "changeset version",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "add-changeset": "changeset add",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
+    "@changesets/cli": "^2.26.2",
     "prettier": "latest",
     "turbo": "latest"
   },

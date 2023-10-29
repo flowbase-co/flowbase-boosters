@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
-import { Welcome } from '@flowbase/framer/components/welcome/Welcome'
+import { Welcome } from '@flowbase-co/framer/components/welcome/Welcome'
 
 import {
   Unit,
