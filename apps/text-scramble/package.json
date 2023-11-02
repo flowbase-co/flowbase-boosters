@@ -1,15 +1,34 @@
 {
-  "name": "@flowbase-co/text-scramble",
+  "name": "@flowbase-co/boosters-text-scramble",
+  "description": "Glitched text scramble effect",
+  "homepage": "https://www.flowbase.co/",
   "version": "0.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
+  },
+  "main": "dist/text-scramble.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "webflow",
+    "attributes",
+    "flowbase",
+    "no code",
+    "text scramble"
+  ],
+  "author": {
+    "name": "Flowbase",
+    "url": "https://www.flowbase.co/"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
-  "dependencies": {
-    "@flowbase-co/tsconfig": "*"
-  },
   "devDependencies": {
+    "@flowbase-co/tsconfig": "1.0.0",
     "vite": "^4.2.1"
   }
 }
