@@ -4,6 +4,9 @@
   "homepage": "https://www.flowbase.co/",
   "version": "1.0.0",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
