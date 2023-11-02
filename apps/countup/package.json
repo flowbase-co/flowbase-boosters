@@ -4,11 +4,14 @@
   "homepage": "https://www.flowbase.co/",
   "version": "0.0.0",
   "type": "module",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
   },
+  "main": "dist/countup.js",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "webflow",
     "attributes",
