@@ -18,11 +18,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: 'pnpm'
           registry-url: 'https://npm.pkg.github.com'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --prefer-offline
+        run: pnpm install
 
       - name: Test
-        run: yarn test
+        run: pnpm run test

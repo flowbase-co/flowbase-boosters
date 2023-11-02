@@ -10,10 +10,6 @@
     "name": "Flowbase",
     "url": "https://www.flowbase.co/"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",

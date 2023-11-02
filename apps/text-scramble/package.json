@@ -1,5 +1,5 @@
 {
-  "name": "@flowbase/text-scramble",
+  "name": "@flowbase-co/text-scramble",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@flowbase/tsconfig": "*"
+    "@flowbase-co/tsconfig": "*"
   },
   "devDependencies": {
     "vite": "^4.2.1"
