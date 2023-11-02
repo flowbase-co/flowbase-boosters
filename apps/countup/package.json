@@ -20,6 +20,10 @@
     "name": "Flowbase",
     "url": "https://www.flowbase.co/"
   },
+  "main": "dist/countup.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build"
