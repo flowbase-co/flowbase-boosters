@@ -8,7 +8,7 @@ export default defineConfig({
     lib: {
       entry: './src/lib/index.ts',
       formats: ['iife'],
-      name: 'text-scramble',
+      name: 'textscramble',
       fileName: () => 'text-scramble.js',
     },
     outDir: '../../dist',
