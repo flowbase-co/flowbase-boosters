@@ -4,7 +4,6 @@
   "homepage": "https://www.flowbase.co/",
   "version": "0.0.0",
   "type": "module",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
@@ -20,6 +19,10 @@
     "name": "Flowbase",
     "url": "https://www.flowbase.co/"
   },
+  "main": "dist/countup.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build"

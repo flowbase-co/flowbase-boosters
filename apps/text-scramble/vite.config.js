@@ -11,6 +11,5 @@ export default defineConfig({
       name: 'textscramble',
       fileName: () => 'text-scramble.js',
     },
-    outDir: '../../dist',
   },
 })
