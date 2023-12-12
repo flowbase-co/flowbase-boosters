@@ -153,6 +153,32 @@ importers:
         specifier: ^4.2.1
         version: 4.5.0(@types/node@12.20.55)
 
+  apps/tooltip:
+    dependencies:
+      tippy.js:
+        specifier: ^6.3.7
+        version: 6.3.7
+    devDependencies:
+      '@flowbase-co/booster':
+        specifier: 1.0.0
+        version: link:../../packages/booster
+      '@flowbase-co/tsconfig':
+        specifier: 1.0.0
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.0(@types/node@12.20.55)
+
+  packages/booster:
+    dependencies:
+      typescript:
+        specifier: ^4.8.3
+        version: 4.9.5
+    devDependencies:
+      '@flowbase-co/tsconfig':
+        specifier: ^1.0.0
+        version: link:../tsconfig
+
   packages/framer:
     dependencies:
       react:
@@ -992,6 +1018,10 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
     dev: true
+
+  /@popperjs/core@2.11.8:
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+    dev: false
 
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -3475,6 +3505,12 @@ packages:
     engines: {node: '>=14.0.0'}
     dev: true
 
+  /tippy.js@6.3.7:
+    resolution: {integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==}
+    dependencies:
+      '@popperjs/core': 2.11.8
+    dev: false
+
   /tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
@@ -3646,6 +3682,12 @@ packages:
       for-each: 0.3.3
       is-typed-array: 1.1.12
     dev: true
+
+  /typescript@4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: false
 
   /ufo@1.3.1:
     resolution: {integrity: sha512-uY/99gMLIOlJPwATcMVYfqDSxUR9//AUcgZMzwfSTJPDKzA1S8mX4VLqa+fiAtveraQUBCz4FFcwVZBGbwBXIw==}

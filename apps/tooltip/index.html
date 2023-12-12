@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowbase Boosters - Tooltip</title>
+  </head>
+  <body>
+    <span fb-tooltip fb-tooltip-message="I'm a tooltip">Default tooltip</span>
+    <br />
+    <br />
+    <span
+      fb-tooltip
+      fb-tooltip-animation="perspective"
+      fb-tooltip-message="I'm a tooltip"
+    >
+      Tooltip with perspective animation
+    </span>
+    <br />
+    <br />
+    <span
+      fb-tooltip
+      fb-tooltip-arrow="rounded"
+      fb-tooltip-message="I'm a tooltip"
+    >
+      Tooltip with rounded arrow
+    </span>
+    <br />
+    <br />
+    <span
+      fb-tooltip
+      fb-tooltip-arrow="sharp"
+      fb-tooltip-message="I'm a tooltip"
+    >
+      Tooltip with sharp arrow
+    </span>
+    <br />
+    <br />
+    <span
+      fb-tooltip
+      fb-tooltip-message="I'm a tooltip"
+      fb-tooltip-position="right"
+    >
+      Tooltip position right
+    </span>
+    <br />
+    <br />
+    <span
+      fb-tooltip
+      fb-tooltip-message="I'm a tooltip"
+      fb-tooltip-show-delay="1000"
+    >
+      Tooltip with show delay
+    </span>
+    <br />
+    <br />
+    <span
+      fb-tooltip
+      fb-tooltip-message="I'm a tooltip"
+      fb-tooltip-theme="material"
+    >
+      Tooltip theme material
+    </span>
+    <br />
+    <br />
+    <span
+      fb-tooltip
+      fb-tooltip-message="I'm a tooltip"
+      fb-tooltip-trigger="click"
+    >
+      Click to show tooltip
+    </span>
+    <br />
+    <br />
+    <span
+      fb-tooltip
+      fb-tooltip-arrow="rounded"
+      fb-tooltip-message="I'm a tooltip"
+      fb-tooltip-trigger="focus"
+    >
+      Tooltip with invalid "fb-tooltip-trigger" attribute (check console)
+    </span>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
