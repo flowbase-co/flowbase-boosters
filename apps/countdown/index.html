@@ -1,27 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flowbase Boosters - Countdown</title>
+
+    <style>
+      .fb-countdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 8px;
+
+        font-family: system-ui;
+        font-size: 11.5px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: center;
+      }
+
+      .fb-countdown-elements {
+        display: inline-flex;
+        align-items: baseline;
+        column-gap: 4px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .fb-countdown-element {
+        font-size: 25px;
+        line-height: 34px;
+      }
+
+      .fb-countdown-message {
+        display: none;
+        color: gray;
+      }
+    </style>
   </head>
   <body>
-    <div id="root">
-      <div id="days-test"></div>
-      <div id="hours"></div>
-      <div id="minutes"></div>
-      <div id="seconds"></div>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        CountdownTimerFlowbase('December 31, 2025 23:59:59')
-      })
+    <div
+      fb-countdown
+      fb-countdown-target="January 1, 2026 00:00:00"
+      class="fb-countdown"
+    >
+      <div class="fb-countdown-elements">
+        <span fb-countdown-weeks class="fb-countdown-element"></span> weeks
+        <span fb-countdown-days class="fb-countdown-element"></span> days
+        <span fb-countdown-hours class="fb-countdown-element"></span> hours
+        <span fb-countdown-minutes class="fb-countdown-element"></span> minutes
+        <span fb-countdown-seconds class="fb-countdown-element"></span> seconds
+      </div>
 
-      // jQuery. Webflow version
-      // $(document).ready(() => {
-      //   CountdownTimerFlowbase('December 31, 2025 23:59:59')
-      // })
-    </script>
+      <div fb-countdown-message class="fb-countdown-message">
+        You’ve reached the end date of our sale!
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <!-- Target date reached -->
+
+    <div
+      fb-countdown
+      fb-countdown-target="January 20, 2024 13:00:00"
+      class="fb-countdown"
+    >
+      <div class="fb-countdown-elements">
+        <span fb-countdown-days class="fb-countdown-element"></span>
+        <span>days</span>
+        <span fb-countdown-hours class="fb-countdown-element"></span>
+        <span>hours</span>
+        <span fb-countdown-minutes class="fb-countdown-element"></span>
+        <span>minutes</span>
+        <span fb-countdown-seconds class="fb-countdown-element"></span>
+        <span>seconds</span>
+      </div>
+
+      <div fb-countdown-message class="fb-countdown-message">
+        You’ve reached the end date of our sale!
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div fb-countdown fb-countdown-target="January 1, 2025 00:00:00">
+      <span fb-countdown-days></span> days
+      <br />
+      <i fb-countdown-minutes></i> minutes
+      <br />
+      <b fb-countdown-seconds></b> seconds
+    </div>
+
+    <br />
+
+    <!-- Invalid date -->
+
+    <div fb-countdown fb-countdown-target="January">
+      <span fb-countdown-days></span> days
+    </div>
+
+    <br />
+
+    <!-- Target date less than date now -->
+
+    <div fb-countdown fb-countdown-target="January 11 2023">
+      <span fb-countdown-days></span> days
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
