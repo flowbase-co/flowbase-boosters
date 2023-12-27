@@ -1,3 +1,5 @@
-import { CountdownTimerFlowbase } from './countdown'
+import { CountdownFlowbase } from './countdown'
 
-window.CountdownTimerFlowbase = CountdownTimerFlowbase
+document.readyState === 'complete'
+  ? CountdownFlowbase()
+  : window.addEventListener('load', CountdownFlowbase)

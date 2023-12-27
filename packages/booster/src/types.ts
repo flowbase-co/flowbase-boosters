@@ -15,10 +15,14 @@ export type Attributes<T extends BoosterRecord> = {
   [Key in keyof T]: Attribute<T[Key]>
 }
 
+export interface BoosterBase {
+  log(message: string, data?: any): void
+}
+
 export interface BoosterOptions<T extends BoosterRecord, K = Element> {
   name: string
   attributes: Attributes<T>
-  apply: (el: K, data: BoosterData<T>) => void
+  apply: (this: BoosterBase, el: K, data: BoosterData<T>) => void
 
   title: string
   documentationLink: string

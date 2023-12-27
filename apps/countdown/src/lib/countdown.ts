@@ -1,77 +1,76 @@
-interface Options {
-  daysSelector?: string
-  hoursSelector?: string
-  minutesSelector?: string
-  secondsSelector?: string
+import Booster from '@flowbase-co/booster'
+import Countdown from '@flowbase-co/countdown'
 
-  onComplete?: () => void
+enum CountdownAttrNames {
+  Root = 'fb-countdown',
+  Target = 'fb-countdown-target',
+
+  Weeks = 'fb-countdown-weeks',
+  Days = 'fb-countdown-days',
+  Hours = 'fb-countdown-hours',
+  Minutes = 'fb-countdown-minutes',
+  Seconds = 'fb-countdown-seconds',
+
+  Message = 'fb-countdown-message',
 }
 
-const day = 1000 * 60 * 60 * 24
-const hour = 1000 * 60 * 60
-const minute = 1000 * 60
-const second = 1000
-
-export const CountdownTimerFlowbase = (
-  expiredDate: string,
-  options: Options = {}
-) => {
-  if (!expiredDate) {
-    throw new Error('Please provide the expiration date')
-  }
-
-  const date = new Date(expiredDate)
-
-  if (date.toString() == 'Invalid Date' || isNaN(date.valueOf())) {
-    throw new Error('Invalid date format')
-  }
-
-  const targetDate = date.getTime()
-
-  const daysEl = document.querySelector<HTMLElement>(
-    options.daysSelector || '#days'
-  )
-  const hoursEl = document.querySelector<HTMLElement>(
-    options.hoursSelector || '#hours'
-  )
-  const minutesEl = document.querySelector<HTMLElement>(
-    options.minutesSelector || '#minutes'
-  )
-  const secondsEl = document.querySelector<HTMLElement>(
-    options.secondsSelector || '#seconds'
-  )
-
-  const countdownInterval = setInterval(() => {
-    const currentDate = new Date().getTime()
-    const distance = targetDate - currentDate
-
-    if (daysEl) {
-      daysEl.innerText = `${Math.floor(distance / day)}`
-    }
-
-    if (hoursEl) {
-      hoursEl.innerText = `${Math.floor((distance % day) / hour)}`
-    }
-
-    if (minutesEl) {
-      minutesEl.innerText = `${Math.floor((distance % hour) / minute)}`
-    }
-
-    if (secondsEl) {
-      secondsEl.innerText = `${Math.floor((distance % minute) / second)}`
-    }
-
-    if (distance < 0) {
-      clearInterval(countdownInterval)
-
-      if (daysEl) daysEl.innerText = '0'
-      if (hoursEl) hoursEl.innerText = '0'
-      if (minutesEl) minutesEl.innerText = '0'
-      if (secondsEl) secondsEl.innerText = '0'
-
-      if (options.onComplete && typeof options.onComplete === 'function') {
-        options.onComplete()
-      }
-    }
-  }, 1000)
+type CountdownAttributes = {
+  [CountdownAttrNames.Target]: string
 }
+
+const countdownBooster = new Booster.Booster<CountdownAttributes, Element>({
+  name: CountdownAttrNames.Root,
+  attributes: {
+    [CountdownAttrNames.Target]: {
+      defaultValue: '',
+      validate: Countdown.validation.isValidDate,
+    },
+  },
+  apply(element, data) {
+    const target = data.get(CountdownAttrNames.Target)
+
+    if (!target) return
+
+    const weeksEl = element.querySelector(`[${CountdownAttrNames.Weeks}]`)
+    const daysEl = element.querySelector(`[${CountdownAttrNames.Days}]`)
+    const hoursEl = element.querySelector(`[${CountdownAttrNames.Hours}]`)
+    const minutesEl = element.querySelector(`[${CountdownAttrNames.Minutes}]`)
+    const secondsEl = element.querySelector(`[${CountdownAttrNames.Seconds}]`)
+
+    if (!weeksEl && !daysEl && !hoursEl && !minutesEl && !secondsEl) {
+      return this.log('Required attribute is missing')
+    }
+
+    const messageElement = element.querySelector<HTMLElement>(
+      `[${CountdownAttrNames.Message}]`
+    )
+
+    if (messageElement) messageElement.style.display = 'none'
+
+    const countdown = new Countdown.Countdown(target, {
+      weeks: !!weeksEl,
+      days: !!daysEl,
+      hours: !!hoursEl,
+      minutes: !!minutesEl,
+      seconds: !!secondsEl,
+
+      onUpdate(result) {
+        if (weeksEl) weeksEl.textContent = result.weeks?.toString() ?? '0'
+        if (daysEl) daysEl.textContent = result.days?.toString() ?? '0'
+        if (hoursEl) hoursEl.textContent = result.hours?.toString() ?? '0'
+        if (minutesEl) minutesEl.textContent = result.minutes?.toString() ?? '0'
+        if (secondsEl) secondsEl.textContent = result.seconds?.toString() ?? '0'
+      },
+
+      onComplete() {
+        if (messageElement) messageElement.style.display = 'block'
+      },
+    })
+
+    countdown.start()
+  },
+  title: 'Countdown Booster',
+  documentationLink: 'https://www.flowbase.co/booster/countdown',
+})
+
+export const CountdownFlowbase = () => countdownBooster.init()

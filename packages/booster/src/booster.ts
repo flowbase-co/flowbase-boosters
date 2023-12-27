@@ -1,7 +1,14 @@
 import { BoosterData } from './data'
-import { Attribute, BoosterOptions, type BoosterRecord } from './types'
+import {
+  Attribute,
+  BoosterBase,
+  BoosterOptions,
+  type BoosterRecord,
+} from './types'
 
-export class Booster<T extends BoosterRecord, K extends Element = Element> {
+export class Booster<T extends BoosterRecord, K extends Element = Element>
+  implements BoosterBase
+{
   constructor(private options: BoosterOptions<T, K>) {}
 
   log(message: string, data?: any) {
@@ -78,7 +85,7 @@ export class Booster<T extends BoosterRecord, K extends Element = Element> {
       data.set(name, attrValue)
     }
 
-    this.options.apply(el, data)
+    this.options.apply.call(this, el, data)
   }
 
   getElements() {
