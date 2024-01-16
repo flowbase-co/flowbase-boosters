@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 export default defineConfig({
   server: {
@@ -15,4 +16,5 @@ export default defineConfig({
       fileName: () => 'tooltip.js',
     },
   },
+  plugins: [cssInjectedByJsPlugin()],
 })
