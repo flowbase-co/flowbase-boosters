@@ -13,3 +13,7 @@ export enum CountdownType {
   Minutes = 'minutes',
   Seconds = 'seconds',
 }
+
+export type CountdownAttributes = {
+  [CountdownAttrNames.Target]: string
+}

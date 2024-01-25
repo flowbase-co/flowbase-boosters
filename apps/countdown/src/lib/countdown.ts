@@ -1,11 +1,11 @@
 import Booster from '@flowbase-co/booster'
 import Countdown from '@flowbase-co/countdown'
 
-import { CountdownAttrNames, CountdownType } from './types'
-
-type CountdownAttributes = {
-  [CountdownAttrNames.Target]: string
-}
+import {
+  CountdownAttrNames,
+  CountdownType,
+  type CountdownAttributes,
+} from './types'
 
 const countdownBooster = new Booster.Booster<CountdownAttributes, Element>({
   name: CountdownAttrNames.Root,
