@@ -1,18 +1,7 @@
 import Booster from '@flowbase-co/booster'
 import Countdown from '@flowbase-co/countdown'
 
-enum CountdownAttrNames {
-  Root = 'fb-countdown',
-  Target = 'fb-countdown-target',
-
-  Weeks = 'fb-countdown-weeks',
-  Days = 'fb-countdown-days',
-  Hours = 'fb-countdown-hours',
-  Minutes = 'fb-countdown-minutes',
-  Seconds = 'fb-countdown-seconds',
-
-  Message = 'fb-countdown-message',
-}
+import { CountdownAttrNames, CountdownType } from './types'
 
 type CountdownAttributes = {
   [CountdownAttrNames.Target]: string
@@ -31,21 +20,31 @@ const countdownBooster = new Booster.Booster<CountdownAttributes, Element>({
 
     if (!target) return
 
-    const weeksEl = element.querySelector(`[${CountdownAttrNames.Weeks}]`)
-    const daysEl = element.querySelector(`[${CountdownAttrNames.Days}]`)
-    const hoursEl = element.querySelector(`[${CountdownAttrNames.Hours}]`)
-    const minutesEl = element.querySelector(`[${CountdownAttrNames.Minutes}]`)
-    const secondsEl = element.querySelector(`[${CountdownAttrNames.Seconds}]`)
+    const weeksEl = element.querySelector(
+      `[${CountdownAttrNames.Type}=${CountdownType.Weeks}]`
+    )
+    const daysEl = element.querySelector(
+      `[${CountdownAttrNames.Type}=${CountdownType.Days}]`
+    )
+    const hoursEl = element.querySelector(
+      `[${CountdownAttrNames.Type}=${CountdownType.Hours}]`
+    )
+    const minutesEl = element.querySelector(
+      `[${CountdownAttrNames.Type}=${CountdownType.Minutes}]`
+    )
+    const secondsEl = element.querySelector(
+      `[${CountdownAttrNames.Type}=${CountdownType.Seconds}]`
+    )
 
     if (!weeksEl && !daysEl && !hoursEl && !minutesEl && !secondsEl) {
       return this.log('Required attribute is missing')
     }
 
-    const messageElement = element.querySelector<HTMLElement>(
-      `[${CountdownAttrNames.Message}]`
+    const finishElement = element.querySelector<HTMLElement>(
+      `[${CountdownAttrNames.Finish}]`
     )
 
-    if (messageElement) messageElement.style.display = 'none'
+    if (finishElement) finishElement.style.display = 'none'
 
     const countdown = new Countdown.Countdown(target, {
       weeks: !!weeksEl,
@@ -63,7 +62,7 @@ const countdownBooster = new Booster.Booster<CountdownAttributes, Element>({
       },
 
       onComplete() {
-        if (messageElement) messageElement.style.display = 'block'
+        if (finishElement) finishElement.style.display = 'block'
       },
     })
 
