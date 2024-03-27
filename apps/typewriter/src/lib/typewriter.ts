@@ -106,6 +106,7 @@ const typewriterBooster = new Booster.Booster<TypewriterAttributes, Element>({
 
     element.innerHTML = ''
 
+    const typedEl = element.appendChild(document.createElement('span'))
     const typedOptions: TypedOptions = {
       backDelay: data.get(TypewriterAttrNames.BackDelay),
       backSpeed: data.get(TypewriterAttrNames.BackSpeed),
@@ -122,7 +123,7 @@ const typewriterBooster = new Booster.Booster<TypewriterAttributes, Element>({
       strings,
     }
 
-    new Typed(element, typedOptions)
+    new Typed(typedEl, typedOptions)
   },
   title: 'Typewriter Booster',
   documentationLink: 'https://www.flowbase.co/booster/typewriter',
