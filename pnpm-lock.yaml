@@ -189,6 +189,18 @@ importers:
         specifier: ^4.2.1
         version: 4.5.0(@types/node@12.20.55)
 
+  apps/tab-rotation-webflow:
+    devDependencies:
+      '@flowbase-co/booster':
+        specifier: 1.0.0
+        version: link:../../packages/booster
+      '@flowbase-co/tsconfig':
+        specifier: 1.0.0
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.0(@types/node@12.20.55)
+
   apps/text-scramble:
     devDependencies:
       '@flowbase-co/tsconfig':
