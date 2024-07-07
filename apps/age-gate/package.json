@@ -1,0 +1,41 @@
+{
+  "name": "@flowbase-co/boosters-age-gate",
+  "description": "Block users depending on age",
+  "homepage": "https://www.flowbase.co/",
+  "version": "0.0.0",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
+  },
+  "main": "dist/age-gate.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "webflow",
+    "attributes",
+    "flowbase",
+    "no code",
+    "age gate"
+  ],
+  "author": {
+    "name": "Flowbase",
+    "url": "https://www.flowbase.co/"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@flowbase-co/booster": "1.0.0",
+    "@flowbase-co/tsconfig": "1.0.0",
+    "vite": "^4.2.1"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.11"
+  }
+}
