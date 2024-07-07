@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowbase Boosters - Age Gate</title>
+
+    <script type="module" src="/src/main.ts"></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .age-gate {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+
+        min-height: 100dvh;
+        background-color: #fff;
+        font-family: system-ui;
+      }
+
+      .age-gate-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 24px;
+
+        max-width: 500px;
+        height: 100%;
+        margin: auto;
+        padding: 48px 28px;
+      }
+
+      .age-gate-top {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .age-gate-tag {
+        align-self: center;
+        display: inline-block;
+
+        margin-bottom: 16px;
+        padding: 4px 8px;
+        border-radius: 6px;
+        box-shadow: 0 0 0 0.5px #dde3e8;
+        background-color: #edf0f2;
+
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 18px;
+        text-align: center;
+        color: #2e3138;
+      }
+
+      .age-gate-heading {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 48px;
+        text-align: center;
+      }
+
+      .age-gate-subheading {
+        margin-top: 8px;
+        margin-bottom: 0;
+
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        color: #5f6674;
+      }
+
+      .age-gate-verification {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 8px;
+      }
+
+      .age-gate-verification-button {
+        min-width: 140px;
+      }
+
+      .age-gate-button {
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .age-gate-button-primary {
+        padding: 10px 12px;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .age-gate-button-outline {
+        padding: 9px 11px;
+        border: 1px solid #dde3e8;
+        box-shadow: 0 2px 1px rgba(149, 160, 178, 0.08);
+        background-color: #fff;
+        color: #000;
+      }
+
+      .age-gate-input {
+        width: 60px;
+        height: 40px;
+        padding: 8px;
+        border: 1px solid #dde3e8;
+        border-radius: 8px;
+        box-shadow: 0 1px 0.5px rgba(149, 160, 178, 0.08);
+
+        background-color: #fff;
+        outline-width: 0;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: center;
+        color: #000;
+      }
+
+      .age-gate-input::placeholder {
+        color: #5f6674;
+      }
+
+      .age-gate-input-year {
+        width: 72px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      fb-age-gate
+      fb-age-gate-type="date"
+      fb-age-gate-minimal="21"
+      fb-age-gate-redirect="https://google.com"
+      class="age-gate"
+    >
+      <div class="age-gate-container">
+        <div class="age-gate-top">
+          <div class="age-gate-tag">Welcome</div>
+          <h1 class="age-gate-heading">Enter your date of birth</h1>
+          <p class="age-gate-subheading">
+            We're just moments away from something amazing.
+          </p>
+        </div>
+        <div class="age-gate-verification">
+          <input
+            fb-age-gate-field="day"
+            class="age-gate-input"
+            inputmode="numeric"
+            placeholder="DD"
+            maxlength="2"
+          />
+          <input
+            fb-age-gate-field="month"
+            class="age-gate-input"
+            inputmode="numeric"
+            placeholder="MM"
+            maxlength="2"
+          />
+          <input
+            class="age-gate-input age-gate-input-year"
+            fb-age-gate-field="year"
+            inputmode="numeric"
+            placeholder="YYYY"
+            maxlength="4"
+          />
+          <a
+            class="age-gate-button age-gate-button-primary w-button"
+            fb-age-gate-button="enter"
+            type="button"
+            href="#"
+          >
+            Enter Website
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
