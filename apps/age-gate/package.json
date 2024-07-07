@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-age-gate",
   "description": "Block users depending on age",
   "homepage": "https://www.flowbase.co/",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "publishConfig": {
     "access": "public"
