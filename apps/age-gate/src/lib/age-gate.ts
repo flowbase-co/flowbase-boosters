@@ -190,7 +190,7 @@ const ageGateBooster = new Booster.Booster<AgeGateAttributes, HTMLElement>({
           ).isValid()
         ) {
           clearFields()
-          return this.log('Invalid date')
+          return
         }
 
         const inputDate = dayjs()
@@ -201,7 +201,7 @@ const ageGateBooster = new Booster.Booster<AgeGateAttributes, HTMLElement>({
 
         clearFields()
 
-        if (diffYears > 100) return this.log('Incorrect date')
+        if (diffYears > 100) return
         if (diffYears >= minimalAge) {
           setCookie(diffYears)
           removeElement()

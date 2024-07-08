@@ -1,3 +1,5 @@
 import { AgeGateFlowbase } from './age-gate'
 
-AgeGateFlowbase()
+document.readyState === 'complete'
+  ? AgeGateFlowbase()
+  : window.addEventListener('load', AgeGateFlowbase)
