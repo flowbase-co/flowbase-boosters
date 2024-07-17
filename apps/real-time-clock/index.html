@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowbase Boosters - Real Time Clock</title>
+
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <div
+      fb-clock
+      fb-clock-format="24-hour"
+      fb-clock-timezone="America/New_York"
+    >
+      <span fb-clock-day-week></span>,
+      <span fb-clock-day></span>
+      <span fb-clock-month="MMMM"></span>
+      <span fb-clock-year="YYYY"></span>
+
+      <span>-</span>
+
+      <span fb-clock-hour>00</span>
+      :
+      <span fb-clock-minute>00</span>
+      :
+      <span fb-clock-second>00</span>
+      <span fb-clock-period></span>
+    </div>
+  </body>
+</html>
