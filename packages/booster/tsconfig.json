@@ -1,6 +1,7 @@
 {
   "extends": "@flowbase-co/tsconfig/base.json",
   "compilerOptions": {
-    "lib": ["ES2020", "DOM"]
-  }
+    "lib": ["ES2022", "DOM"]
+  },
+  "include": ["src"]
 }
