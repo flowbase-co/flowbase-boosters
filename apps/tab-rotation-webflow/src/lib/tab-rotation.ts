@@ -3,7 +3,6 @@ import Booster from '@flowbase-co/booster'
 enum TabRotationAttrNames {
   Root = 'fb-tabs',
   Speed = 'fb-tabs-speed',
-  Button = 'fb-tabs-button',
 }
 
 type TabRotationAttributes = {
@@ -23,9 +22,7 @@ const tabRotationBooster = new Booster.Booster<
     },
   },
   apply(element, data) {
-    const buttonElements = element.querySelectorAll<HTMLElement>(
-      `[${TabRotationAttrNames.Button}]`
-    )
+    const buttonElements = element.querySelectorAll<HTMLElement>('.w-tab-link')
 
     if (!buttonElements.length) return this.log('Required attribute is missing')
 
