@@ -37,7 +37,7 @@ type RealTimeClockAttributes = {
 
 const formats: {
   [key: string]: {
-    available: string[]
+    available?: string[]
     defaultValue: string
   }
 } = {
@@ -54,7 +54,6 @@ const formats: {
     defaultValue: 'ss',
   },
   [RealTimeClockAttrNames.Period]: {
-    available: ['a'],
     defaultValue: 'a',
   },
   [RealTimeClockAttrNames.Day]: {
@@ -130,9 +129,15 @@ const realTimeClockBooster = new Booster.Booster<
       if (!attrFormat) continue
 
       for (const element of elements) {
+        if (attr === RealTimeClockAttrNames.Period) {
+          values.push({ element, format: attrFormat.defaultValue })
+
+          continue
+        }
+
         const value = element.getAttribute(attr)
 
-        if (value && !attrFormat.available.includes(value)) {
+        if (value && !attrFormat.available?.includes(value)) {
           log(attr, value)
           continue
         }
