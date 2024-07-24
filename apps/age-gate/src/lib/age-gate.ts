@@ -8,7 +8,7 @@ import Booster from '@flowbase-co/booster'
 enum AgeGateAttrNames {
   Root = 'fb-age-gate',
   Type = 'fb-age-gate-type',
-  MinimalAge = 'fb-age-gate-minimal',
+  MinimumAge = 'fb-age-gate-minimum',
   RedirectUrl = 'fb-age-gate-redirect',
 
   CookieName = 'fb-age-gate-cookie-name',
@@ -37,7 +37,7 @@ enum AgeGateField {
 
 type AgeGateAttributes = {
   [AgeGateAttrNames.Type]: AgeGateType
-  [AgeGateAttrNames.MinimalAge]: number
+  [AgeGateAttrNames.MinimumAge]: number
   [AgeGateAttrNames.RedirectUrl]: string
   [AgeGateAttrNames.CookieName]: string
   [AgeGateAttrNames.CookieDuration]: number
@@ -67,7 +67,7 @@ const ageGateBooster = new Booster.Booster<AgeGateAttributes, HTMLElement>({
       defaultValue: AgeGateType.Button,
       validate: Object.values(AgeGateType),
     },
-    [AgeGateAttrNames.MinimalAge]: {
+    [AgeGateAttrNames.MinimumAge]: {
       defaultValue: 18,
       validate: Booster.validation.isNumber,
       parse: Number,
@@ -88,12 +88,12 @@ const ageGateBooster = new Booster.Booster<AgeGateAttributes, HTMLElement>({
     const showElement = () => (element.style.display = 'block')
     const removeElement = () => element.remove()
 
-    const minimalAge = data.get(AgeGateAttrNames.MinimalAge)
+    const minAge = data.get(AgeGateAttrNames.MinimumAge)
     const cookieName = data.get(AgeGateAttrNames.CookieName)
     const cookieValue = Number(getCookieValueByName(cookieName))
     const cookieAge = !isNaN(cookieValue) ? cookieValue : undefined
 
-    if (cookieAge && cookieAge >= minimalAge) {
+    if (cookieAge && cookieAge >= minAge) {
       removeElement()
       return
     }
@@ -126,7 +126,7 @@ const ageGateBooster = new Booster.Booster<AgeGateAttributes, HTMLElement>({
       if (!buttonOver) return this.log('Required attribute is missing')
 
       buttonOver.addEventListener('click', () => {
-        setCookie(minimalAge)
+        setCookie(minAge)
         removeElement()
       })
 
@@ -202,7 +202,7 @@ const ageGateBooster = new Booster.Booster<AgeGateAttributes, HTMLElement>({
         clearFields()
 
         if (diffYears > 100) return
-        if (diffYears >= minimalAge) {
+        if (diffYears >= minAge) {
           setCookie(diffYears)
           removeElement()
         } else redirect()
