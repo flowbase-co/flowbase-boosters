@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-custom-slider-webflow",
   "description": "Custom arrows and navigation dots for the slider element",
   "homepage": "https://www.flowbase.co/",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "publishConfig": {
     "access": "public"
