@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowbase Boosters - Password Visibility Control</title>
+
+    <style>
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div fb-password>
+      <div style="display: flex">
+        <span>Type:</span>
+        <span fb-password-state="visible" class="hide">text</span>
+        <span fb-password-state="hidden">password</span>
+      </div>
+
+      <input type="password" />
+
+      <button fb-password-toggle>toggle 1</button>
+      <button fb-password-toggle>
+        toggle 2 -
+        <div style="display: inline-block">
+          <span fb-password-state="visible" class="hide">text</span>
+          <span fb-password-state="hidden">password</span>
+        </div>
+      </button>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
