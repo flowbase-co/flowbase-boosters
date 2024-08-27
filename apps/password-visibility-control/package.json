@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-password-visibility-control",
   "description": "Adjust input type to show password",
   "homepage": "https://www.flowbase.co/",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "publishConfig": {
     "access": "public"
