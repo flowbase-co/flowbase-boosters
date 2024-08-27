@@ -1,5 +1,14 @@
 # @flowbase-co/boosters-tab-rotation-webflow
 
+## 1.2.0
+
+### Minor Changes
+
+- dca1138: Add attributes:
+
+  - `fb-tabs-pauseable`
+  - `fb-tabs-progress`
+
 ## 1.1.0
 
 ### Minor Changes
