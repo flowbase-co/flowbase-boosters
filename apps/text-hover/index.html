@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flowbase Boosters - Text Hover</title>
+
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        font-kerning: none;
+      }
+
+      body {
+        margin: 0;
+        font-family: monospace, system-ui;
+        color: rgba(227, 226, 220, 0.86);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        font-kerning: none;
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        row-gap: 200px;
+
+        width: 100vw;
+        min-height: 100dvh;
+        padding: 100px;
+      }
+
+      .section:nth-child(even) {
+        background-color: #000;
+      }
+
+      .section:nth-child(odd) {
+        background-color: #1b1b1b;
+      }
+
+      .number {
+        font-size: 40px;
+        color: olivedrab;
+      }
+
+      .content {
+        width: 70%;
+        max-width: 1000px;
+        min-width: 300px;
+        font-size: 40px;
+        line-height: 56px;
+      }
+
+      /* EFFECT 1 */
+
+      .effect-1 {
+        color: orange;
+        /* display: inline-block; */
+        /* background: rgba(255, 105, 180, 0.5); */
+      }
+
+      /* EFFECT 2 */
+
+      .effect-2-cursor {
+        background: #c3c2bc;
+      }
+
+      /* EFFECT 3 */
+
+      .effect-3-bg {
+        background: #fff;
+      }
+
+      /* EFFECT 5 */
+
+      .effect-5-bg {
+        border-radius: 2px;
+        background-color: rgb(229 222 204 / 10%);
+        backdrop-filter: blur(5px);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section">
+      <!-- TODO: multiline -->
+      <span class="number">1</span>
+      <div class="content">
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span class="effect-1" fb-text-hover fb-text-hover-type="first">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <span class="effect-1" fb-text-hover fb-text-hover-type="first">
+          <span>example span</span>
+        </span>
+        +
+        <span class="effect-1" fb-text-hover fb-text-hover-type="first">
+          example span
+        </span>
+
+        <br />
+        <br />
+
+        <div class="effect-1" fb-text-hover fb-text-hover-type="first">
+          example div
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <span class="number">2</span>
+      <div class="content">
+        <div fb-text-hover fb-text-hover-type="second">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          voluptatibus deserunt, eum reiciendis nihil, vero magnam soluta
+          itaque, cum voluptatem repudiandae
+        </div>
+
+        <br />
+        <br />
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          voluptatibus deserunt,
+          <span fb-text-hover fb-text-hover-type="second">
+            eum reiciendis nihil,
+          </span>
+          vero magnam soluta itaque, cum voluptatem repudiandae
+        </div>
+
+        <br />
+        <br />
+
+        <span fb-text-hover fb-text-hover-type="second">
+          <span>Example Span</span>
+        </span>
+        +
+        <span fb-text-hover fb-text-hover-type="second">Example Span</span>
+
+        <br />
+        <br />
+
+        <div fb-text-hover fb-text-hover-type="second">Example Text</div>
+      </div>
+    </section>
+    <section class="section">
+      <span class="number">3</span>
+      <div class="content">
+        <div fb-text-hover fb-text-hover-type="third">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          voluptatibus deserunt, eum reiciendis nihil, vero magnam soluta
+          itaque, cum voluptatem repudiandae
+        </div>
+
+        <br />
+        <br />
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          voluptatibus deserunt,
+          <span fb-text-hover fb-text-hover-type="third">
+            eum reiciendis nihil, vero magnam
+          </span>
+          soluta itaque, cum voluptatem repudiandae
+        </div>
+
+        <br />
+        <br />
+
+        <span fb-text-hover fb-text-hover-type="third">
+          <span>Example Span</span>
+        </span>
+        +
+        <span fb-text-hover fb-text-hover-type="third">Example Span</span>
+
+        <br />
+        <br />
+
+        <div fb-text-hover fb-text-hover-type="third">Example Text</div>
+      </div>
+    </section>
+    <section class="section">
+      <span class="number">4</span>
+      <div class="content">
+        <div fb-text-hover fb-text-hover-type="fourth">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          voluptatibus deserunt, eum reiciendis nihil, vero magnam soluta
+          itaque, cum voluptatem repudiandae
+        </div>
+
+        <br />
+        <br />
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          voluptatibus deserunt,
+          <span fb-text-hover fb-text-hover-type="fourth">
+            eum reiciendis nihil, vero magnam
+          </span>
+          soluta itaque, cum voluptatem repudiandae
+        </div>
+
+        <br />
+        <br />
+
+        <span fb-text-hover fb-text-hover-type="fourth">
+          <span>Example Span</span>
+        </span>
+        +
+        <span fb-text-hover fb-text-hover-type="fourth">Example Span</span>
+
+        <br />
+        <br />
+
+        <div fb-text-hover fb-text-hover-type="fourth">Example Text</div>
+      </div>
+    </section>
+    <section class="section">
+      <span class="number">5</span>
+      <div class="content">
+        <div fb-text-hover fb-text-hover-type="fifth">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          voluptatibus deserunt, eum reiciendis nihil, vero magnam soluta
+          itaque, cum voluptatem repudiandae
+        </div>
+
+        <br />
+        <br />
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          voluptatibus deserunt,
+          <span fb-text-hover fb-text-hover-type="fifth">
+            eum reiciendis nihil,</span
+          >
+          vero magnam soluta itaque, cum voluptatem repudiandae
+        </div>
+
+        <br />
+        <br />
+
+        <span fb-text-hover fb-text-hover-type="fifth">
+          <span>Example Span</span>
+        </span>
+        +
+        <span fb-text-hover fb-text-hover-type="fifth">Example Span</span>
+
+        <br />
+        <br />
+
+        <div fb-text-hover fb-text-hover-type="fifth">Example Text</div>
+      </div>
+    </section>
+
+    <!-- async defer -->
+    <script src="./ARCHIVE-boostergsap.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
