@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flowbase Boosters - Text Reveal</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+
+      body {
+        position: relative;
+        margin: 0;
+        background-color: #000;
+
+        font-family: 'Roboto Mono', monospace;
+        font-kerning: none;
+        font-style: normal;
+        font-size: 32px;
+        line-height: 1.4;
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .noise-texture {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        background-image: url('./assets/noise-texture.png');
+        background-position: 0 0;
+        background-size: auto;
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      .effect-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 100vh;
+        padding: 100px 3%;
+        overflow: hidden;
+      }
+
+      .effect-section:not(:first-child) {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .effect-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 44px;
+
+        width: 100%;
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .heading-text {
+        font-size: 62px;
+        line-height: 1.2;
+      }
+
+      /* Effects */
+
+      [fb-text-reveal-type='5'] {
+        color: rgba(255, 255, 255, 0.2);
+      }
+
+      [fb-text-reveal-type='5'] span {
+        color: rgb(186, 121, 46);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="noise-texture"></div>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Scroll ↘</div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Reveal Effect #1</div>
+        <div fb-text-reveal fb-text-reveal-type="1">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+          impedit labore tempore praesentium facere dolores aut sunt itaque
+          blanditiis qui, explicabo sint, accusantium ad? Mollitia assumenda
+          distinctio laborum et ipsum.
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Reveal Effect #2</div>
+        <div fb-text-reveal fb-text-reveal-type="2">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+          impedit labore tempore praesentium facere dolores aut sunt itaque
+          blanditiis qui, explicabo sint, accusantium ad? Mollitia assumenda
+          distinctio laborum et ipsum.
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Reveal Effect #3</div>
+        <div fb-text-reveal fb-text-reveal-type="3">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+          impedit labore tempore praesentium facere dolores aut sunt itaque
+          blanditiis qui, explicabo sint, accusantium ad? Mollitia assumenda
+          distinctio laborum et ipsum.
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Reveal Effect #4</div>
+        <div fb-text-reveal fb-text-reveal-type="4">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+          impedit labore tempore praesentium facere dolores aut sunt itaque
+          blanditiis qui, explicabo sint, accusantium ad? Mollitia assumenda
+          distinctio laborum et ipsum.
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Reveal Effect #5</div>
+        <div
+          fb-text-reveal
+          fb-text-reveal-type="5"
+          fb-text-reveal-color-end="#fff"
+        >
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+          impedit labore tempore <span>praesentium</span> facere dolores aut
+          sunt itaque blanditiis qui, explicabo sint, accusantium ad? Mollitia
+          assumenda distinctio laborum et ipsum.
+        </div>
+      </div>
+    </section>
+
+    <script src="./gsap.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

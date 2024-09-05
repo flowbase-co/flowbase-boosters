@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flowbase Boosters - Text Highlight</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+
+      body {
+        position: relative;
+        margin: 0;
+        background-color: #000;
+
+        font-family: 'Roboto Mono', monospace;
+        font-kerning: none;
+        font-style: normal;
+        font-size: 32px;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.4);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .noise-texture {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        background-image: url('./assets/noise-texture.png');
+        background-position: 0 0;
+        background-size: auto;
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      .effect-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 100vh;
+        padding: 100px 3%;
+        overflow: hidden;
+      }
+
+      .effect-section:not(:first-child) {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .effect-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 44px;
+
+        width: 100%;
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .heading-text {
+        font-size: 62px;
+        line-height: 1.2;
+        color: #fff;
+      }
+
+      /* Effects */
+
+      [fb-text-highlight] {
+        color: #fff;
+      }
+
+      [fb-text-highlight-type='10'] {
+        color: #b1b1b1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="noise-texture"></div>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Scroll ↘</div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #1</div>
+
+        <div fb-text-highlight fb-text-highlight-type="1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="1">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="1">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="1">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="1">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="1">
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #2</div>
+
+        <div fb-text-highlight fb-text-highlight-type="2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="2">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="2">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="2">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="2">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="2">
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #3</div>
+
+        <div fb-text-highlight fb-text-highlight-type="3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="3">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="3">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="3">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="3">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="3">
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #4</div>
+
+        <div fb-text-highlight fb-text-highlight-type="4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="4">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="4">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="4">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="4">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="4">
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #5</div>
+
+        <div
+          fb-text-highlight
+          fb-text-highlight-type="5"
+          fb-text-highlight-multi-line="true"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="5">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="5">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="5">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="5">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="5">
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #6</div>
+
+        <div
+          fb-text-highlight
+          fb-text-highlight-type="6"
+          fb-text-highlight-multi-line="true"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="6">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="6">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="6">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="6">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="6">
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #7</div>
+
+        <div
+          fb-text-highlight
+          fb-text-highlight-type="7"
+          fb-text-highlight-multi-line="true"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="7">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="7">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="7">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="7">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="7">
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #8</div>
+
+        <div fb-text-highlight fb-text-highlight-type="8">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="8">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="8">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="8">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="8">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="8">
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #9</div>
+
+        <div fb-text-highlight fb-text-highlight-type="9">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="9">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="9">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="9">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="9">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="9">
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #10</div>
+
+        <div
+          fb-text-highlight
+          fb-text-highlight-type="10"
+          fb-text-highlight-colors="#8DB5C5"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span
+            fb-text-highlight
+            fb-text-highlight-type="10"
+            fb-text-highlight-colors="#8DB5C5"
+          >
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span
+            fb-text-highlight
+            fb-text-highlight-type="10"
+            fb-text-highlight-colors="#8DB5C5"
+          >
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span
+            fb-text-highlight
+            fb-text-highlight-type="10"
+            fb-text-highlight-colors="#8DB5C5"
+          >
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span
+            fb-text-highlight
+            fb-text-highlight-type="10"
+            fb-text-highlight-colors="#8DB5C5"
+          >
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div
+          fb-text-highlight
+          fb-text-highlight-type="10"
+          fb-text-highlight-colors="#8DB5C5"
+        >
+          Lorem ipsum dolor
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #11</div>
+
+        <div fb-text-highlight fb-text-highlight-type="11">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="11">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="11">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="11">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="11">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="11">
+          Lorem ipsum dolor
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="11" class="effect-11">
+          Lorem
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section">
+      <div class="effect-container">
+        <div class="heading-text">Text Highlight #12</div>
+
+        <div
+          fb-text-highlight
+          fb-text-highlight-type="12"
+          fb-text-highlight-multi-line="true"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci necessitatibus labore commodi id minima eum. Fugiat
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="12">
+            necessitatibus labore
+          </span>
+          commodi id minima eum. Fugiat quia quos harum, illum dicta rerum
+          voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
+          suscipit adipisci
+          <span fb-text-highlight fb-text-highlight-type="12">
+            necessitatibus labore commodi id minima eum. Fugiat
+          </span>
+          quia quos harum, illum dicta rerum voluptas in sint sit sequi.
+        </div>
+
+        <div>
+          <span fb-text-highlight fb-text-highlight-type="12">
+            <span>Lorem ipsum dolor</span>
+          </span>
+          +
+          <span fb-text-highlight fb-text-highlight-type="12">
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="12">
+          Lorem ipsum dolor
+        </div>
+
+        <div fb-text-highlight fb-text-highlight-type="12" class="effect-12">
+          Lorem
+        </div>
+      </div>
+    </section>
+
+    <section class="effect-section"></section>
+
+    <script src="./gsap.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
