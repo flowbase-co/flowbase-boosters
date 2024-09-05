@@ -31,8 +31,9 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@flowbase-co/booster": "1.0.0",
-    "@flowbase-co/tsconfig": "1.0.0",
+    "@flowbase-co/booster": "workspace:*",
+    "@flowbase-co/tsconfig": "workspace:*",
+    "gsap": "^3.12.5",
     "vite": "^4.2.1"
   }
 }

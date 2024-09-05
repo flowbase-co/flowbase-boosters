@@ -1,4 +1,5 @@
 import Booster from '@flowbase-co/booster'
+import GSAP from 'gsap'
 
 enum CookieAttrNames {
   Root = 'fb-cookie',
@@ -73,4 +74,10 @@ const cookieBooster = new Booster.Booster<CookieAttributes, Element>({
   documentationLink: 'https://www.flowbase.co/booster/cookies',
 })
 
-export const CookieFlowbase = () => cookieBooster.init()
+export const CookieFlowbase = async () => {
+  const gsap = await Booster.Dependencies.init().get<GSAP>('gsap', '3.12.5')
+
+  console.log('CookieFlowbase', { gsap })
+
+  cookieBooster.init()
+}

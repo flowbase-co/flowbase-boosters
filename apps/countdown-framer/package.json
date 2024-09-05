@@ -11,10 +11,10 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@flowbase-co/framer": "1.0.0"
+    "@flowbase-co/framer": "workspace:*"
   },
   "devDependencies": {
-    "@flowbase-co/tsconfig": "1.0.0",
+    "@flowbase-co/tsconfig": "workspace:*",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.31",

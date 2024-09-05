@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flowbase Boosters - Text Reveal On Scroll</title>
+
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui;
+        color: rgba(227, 226, 220, 0.86);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .empty-section {
+        min-height: 100dvh;
+        background: rgb(25, 30, 30);
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        row-gap: 200px;
+
+        width: 100vw;
+        min-height: 100dvh;
+        padding: 100px;
+      }
+
+      .section:nth-child(even) {
+        background-color: #000;
+      }
+
+      .section:nth-child(odd) {
+        background-color: #1b1b1b;
+      }
+
+      .number {
+        font-size: 40px;
+        color: olivedrab;
+      }
+
+      .content {
+        width: 70%;
+        max-width: 1000px;
+        min-width: 300px;
+        font-size: 48px;
+        line-height: 1.2;
+      }
+
+      .content b {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="empty-section"></section>
+
+    <section class="section">
+      <span class="number">1</span>
+      <div class="content" fb-text-reveal fb-text-reveal-type="first">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+        impedit labore tempore praesentium facere dolores aut sunt itaque
+        blanditiis qui, explicabo sint, accusantium ad? Mollitia assumenda
+        distinctio laborum et ipsum.
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="number">2</span>
+      <div class="content" fb-text-reveal fb-text-reveal-type="second">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+        impedit labore tempore praesentium facere dolores aut sunt itaque
+        blanditiis qui, explicabo sint, accusantium ad? Mollitia assumenda
+        distinctio laborum et ipsum.
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="number">3</span>
+      <div class="content" fb-text-reveal fb-text-reveal-type="third">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+        impedit labore tempore praesentium facere dolores aut sunt itaque
+        blanditiis qui, explicabo sint, accusantium ad? Mollitia assumenda
+        distinctio laborum et ipsum.
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="number">4</span>
+      <div class="content" fb-text-reveal fb-text-reveal-type="fourth">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+        impedit labore tempore praesentium facere dolores aut sunt itaque
+        blanditiis qui, explicabo sint, accusantium ad? Mollitia assumenda
+        distinctio laborum et ipsum.
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="number">5</span>
+      <div
+        class="content"
+        fb-text-reveal
+        fb-text-reveal-type="fifth"
+        fb-text-reveal-end-color="teal"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+        impedit labore <b>tempore praesentium</b> facere dolores aut sunt itaque
+        blanditiis qui, explicabo sint, accusantium ad? Mollitia assumenda
+        distinctio laborum et ipsum.
+      </div>
+    </section>
+
+    <section class="empty-section"></section>
+
+    <!-- async defer -->
+    <script src="./ARCHIVE-boostergsap.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

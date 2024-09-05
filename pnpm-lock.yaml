@@ -25,10 +25,10 @@ importers:
         version: 1.11.11
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -46,11 +46,11 @@ importers:
         specifier: ^11.10.6
         version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.34)(react@18.2.0)
       '@flowbase-co/framer':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/framer
     devDependencies:
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       '@testing-library/jest-dom':
         specifier: ^5.16.5
@@ -101,11 +101,14 @@ importers:
   apps/cookie:
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
       vite:
         specifier: ^4.2.1
         version: 4.5.0(@types/node@12.20.55)
@@ -113,13 +116,13 @@ importers:
   apps/countdown:
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/countdown':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/countdown
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -140,11 +143,11 @@ importers:
         specifier: ^11.10.6
         version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.34)(react@18.2.0)
       '@flowbase-co/framer':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/framer
     devDependencies:
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       '@testing-library/jest-dom':
         specifier: ^5.16.5
@@ -187,7 +190,7 @@ importers:
         version: 2.0.2
     devDependencies:
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -196,10 +199,26 @@ importers:
   apps/custom-slider-webflow:
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.0(@types/node@12.20.55)
+
+  apps/gsap:
+    dependencies:
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
+    devDependencies:
+      '@flowbase-co/booster':
+        specifier: workspace:*
+        version: link:../../packages/booster
+      '@flowbase-co/tsconfig':
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -208,10 +227,10 @@ importers:
   apps/password-visibility-control:
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -224,10 +243,10 @@ importers:
         version: 1.11.11
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -236,10 +255,10 @@ importers:
   apps/slider-arrows-webflow:
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -248,10 +267,10 @@ importers:
   apps/social-share:
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -260,10 +279,48 @@ importers:
   apps/tab-rotation-webflow:
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.0(@types/node@12.20.55)
+
+  apps/text-hover:
+    dependencies:
+      '@flowbase-co/split-text':
+        specifier: workspace:*
+        version: link:../../packages/split-text
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
+    devDependencies:
+      '@flowbase-co/booster':
+        specifier: workspace:*
+        version: link:../../packages/booster
+      '@flowbase-co/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.0(@types/node@12.20.55)
+
+  apps/text-reveal:
+    dependencies:
+      '@flowbase-co/split-text':
+        specifier: workspace:*
+        version: link:../../packages/split-text
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
+    devDependencies:
+      '@flowbase-co/booster':
+        specifier: workspace:*
+        version: link:../../packages/booster
+      '@flowbase-co/tsconfig':
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -272,7 +329,7 @@ importers:
   apps/text-scramble:
     devDependencies:
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -288,10 +345,10 @@ importers:
         version: 3.3.1(vite@4.5.0)
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -304,10 +361,10 @@ importers:
         version: 2.1.0
     devDependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: workspace:*
+        version: link:../../packages/booster
       '@flowbase-co/tsconfig':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/tsconfig
       vite:
         specifier: ^4.2.1
@@ -320,7 +377,7 @@ importers:
         version: 4.9.5
     devDependencies:
       '@flowbase-co/tsconfig':
-        specifier: ^1.0.0
+        specifier: workspace:*
         version: link:../tsconfig
 
   packages/countdown:
@@ -330,7 +387,7 @@ importers:
         version: 4.9.5
     devDependencies:
       '@flowbase-co/tsconfig':
-        specifier: ^1.0.0
+        specifier: workspace:*
         version: link:../tsconfig
 
   packages/framer:
@@ -341,6 +398,19 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+
+  packages/split-text:
+    dependencies:
+      split-type:
+        specifier: ^0.3.4
+        version: 0.3.4
+      typescript:
+        specifier: ^4.8.3
+        version: 4.9.5
+    devDependencies:
+      '@flowbase-co/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
 
   packages/tsconfig: {}
 
@@ -1061,12 +1131,6 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
-
-  /@flowbase-co/booster@1.0.0:
-    resolution: {integrity: sha512-AbmNyLjUsQhVccVxBAI0eEwVrFUiPiRw266gfD6sjjOG7f4KvQS1AL7Db0lyKbedRWA/pDGVbU2+I4UfInjYQw==}
-    dependencies:
-      typescript: 4.9.5
-    dev: true
 
   /@jest/expect-utils@29.7.0:
     resolution: {integrity: sha512-GlsNBWiFQFCVi9QVSx7f5AgMeLxe9YCCs5PuP2O2LdjDAA8Jh9eX7lA1Jq/xdXw3Wb3hyvlFNfZIfcRetSzYcA==}
@@ -2538,6 +2602,9 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
+  /gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
+
   /hard-rejection@2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
     engines: {node: '>=6'}
@@ -3772,6 +3839,10 @@ packages:
   /spdx-license-ids@3.0.16:
     resolution: {integrity: sha512-eWN+LnM3GR6gPu35WxNgbGl8rmY1AEmoMDvL/QD6zYmPWgywxWqJWNdLGT+ke8dKNWrcYgYjPpG5gbTfghP8rw==}
     dev: true
+
+  /split-type@0.3.4:
+    resolution: {integrity: sha512-otEk9vnD8qwfLsk3Lx0gz+qRkNIJCx0mlyL47ImP/DjMuV39d75Lpfwjn9fHteDRz0aoOblSzQjSNT9+Sswxcg==}
+    dev: false
 
   /sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
