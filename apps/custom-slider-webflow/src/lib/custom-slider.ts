@@ -3,12 +3,17 @@ import Booster, { BoosterBase } from '@flowbase-co/booster'
 enum CustomSliderAttrNames {
   Root = 'fb-slider',
   Arrow = 'fb-slider-arrow',
-  NavItem = 'fb-slider-nav-item',
+  NavItem = 'fb-slider-nav',
 }
 
 enum SliderArrow {
   Left = 'left',
   Right = 'right',
+}
+
+enum SliderNav {
+  Active = 'active',
+  Inactive = 'inactive',
 }
 
 function setupArrows(this: BoosterBase, element: HTMLElement) {
@@ -75,11 +80,19 @@ function setupArrows(this: BoosterBase, element: HTMLElement) {
 }
 
 function setupNavigation(this: BoosterBase, element: HTMLElement) {
-  const customNavItems = Array.from(
-    element.querySelectorAll<HTMLElement>(`[${CustomSliderAttrNames.NavItem}]`)
+  const inactiveItemEl = element.querySelector<HTMLElement>(
+    `[${CustomSliderAttrNames.NavItem}=${SliderNav.Inactive}]`
   )
 
-  if (!customNavItems.length) return
+  if (!inactiveItemEl) return this.log(`Inactive Nav Element isn't detected`)
+
+  const activeItemEl = element.querySelector<HTMLElement>(
+    `[${CustomSliderAttrNames.NavItem}=${SliderNav.Active}]`
+  )
+
+  if (!activeItemEl) return this.log(`Active Nav Element isn't detected`)
+
+  activeItemEl.remove()
 
   const webflowNavItems = Array.from(
     element.querySelectorAll<HTMLElement>('.w-slider-nav .w-slider-dot')
@@ -89,25 +102,11 @@ function setupNavigation(this: BoosterBase, element: HTMLElement) {
     return this.log(`Webflow Slider Nav isn't detected`)
   }
 
-  const NAV_ITEM_ACTIVE_CLASS = 'slider-nav-active'
-
-  const onClickCustomNavItem = (event: MouseEvent) => {
-    const itemIdx = customNavItems.findIndex((el) => el === event.target)
-
-    webflowNavItems[itemIdx].click()
-  }
-
-  for (const item of customNavItems) {
-    item.addEventListener('click', onClickCustomNavItem)
-  }
-
   const attrsToCopy = ['aria-label', 'aria-pressed', 'role', 'tabindex']
   const copyNavItemAttrs = (
-    webflowNavItem?: HTMLElement,
-    customNavItem?: HTMLElement
+    webflowNavItem: HTMLElement,
+    customNavItem: HTMLElement
   ) => {
-    if (!webflowNavItem || !customNavItem) return
-
     for (const attr of attrsToCopy) {
       const wfAttr = webflowNavItem.attributes.getNamedItem(attr)
 
@@ -115,41 +114,57 @@ function setupNavigation(this: BoosterBase, element: HTMLElement) {
     }
   }
 
+  const onClickCustomNavItem = (idx: number) => webflowNavItems[idx].click()
+
+  const customNavItems: HTMLElement[] = [inactiveItemEl]
+
+  for (let idx = 0; idx < webflowNavItems.length; idx++) {
+    const customNavItem = inactiveItemEl.cloneNode(true) as HTMLElement
+
+    copyNavItemAttrs(webflowNavItems[idx], customNavItem)
+    customNavItem.addEventListener('click', () => onClickCustomNavItem(idx))
+
+    customNavItems[idx]?.insertAdjacentElement('afterend', customNavItem)
+    customNavItems.push(customNavItem)
+  }
+
+  inactiveItemEl.remove()
+  customNavItems.shift()
+
+  let prevActiveWebflowNavItemIdx = -1
+  let prevActiveWebflowNavItemEl: HTMLElement
+
   const changeActiveNavItem = () => {
-    const activeCustomNavItemIdx = customNavItems.findIndex((el) =>
-      el.classList.contains(NAV_ITEM_ACTIVE_CLASS)
-    )
-    const activeWebflowNavItemIdx = webflowNavItems.findIndex((el) =>
+    if (prevActiveWebflowNavItemIdx !== -1) {
+      customNavItems[prevActiveWebflowNavItemIdx].replaceWith(
+        prevActiveWebflowNavItemEl
+      )
+      customNavItems[prevActiveWebflowNavItemIdx] = prevActiveWebflowNavItemEl
+    }
+
+    const activeWebflowNavItem = webflowNavItems.find((el) =>
       el.classList.contains('w-active')
     )
 
-    if (activeCustomNavItemIdx === activeWebflowNavItemIdx) return
+    if (!activeWebflowNavItem) return
 
-    const prevActiveCustomNavItem = customNavItems[activeCustomNavItemIdx]
-    const newActiveCustomNavItem = customNavItems[activeWebflowNavItemIdx]
+    const activeWebflowNavItemIdx =
+      webflowNavItems.indexOf(activeWebflowNavItem)
 
-    if (prevActiveCustomNavItem) {
-      prevActiveCustomNavItem.classList.remove(NAV_ITEM_ACTIVE_CLASS)
-      copyNavItemAttrs(
-        webflowNavItems[activeCustomNavItemIdx],
-        prevActiveCustomNavItem
-      )
-    }
-    if (newActiveCustomNavItem) {
-      newActiveCustomNavItem.classList.add(NAV_ITEM_ACTIVE_CLASS)
-      copyNavItemAttrs(
-        webflowNavItems[activeWebflowNavItemIdx],
-        newActiveCustomNavItem
-      )
-    }
+    copyNavItemAttrs(activeWebflowNavItem, activeItemEl)
+
+    prevActiveWebflowNavItemIdx = activeWebflowNavItemIdx
+    prevActiveWebflowNavItemEl = customNavItems[activeWebflowNavItemIdx]
+
+    customNavItems[activeWebflowNavItemIdx].replaceWith(activeItemEl)
+    customNavItems[activeWebflowNavItemIdx] = activeItemEl
   }
 
   const observer = new MutationObserver(changeActiveNavItem)
 
-  webflowNavItems.forEach((item, idx) => {
+  for (const item of webflowNavItems) {
     observer.observe(item, { attributeFilter: ['class'] })
-    copyNavItemAttrs(webflowNavItems[idx], customNavItems[idx])
-  })
+  }
 
   changeActiveNavItem()
 }
