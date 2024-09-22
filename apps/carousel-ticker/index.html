@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowbase Boosters - Carousel Ticker</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      .carousel {
+        background-color: rgb(220, 238, 255);
+      }
+
+      .carousel__content {
+        align-items: center;
+      }
+
+      .card--1 {
+        width: 60px;
+        height: 60px;
+        background-color: #cd7e7e;
+      }
+
+      .card--2 {
+        width: 100px;
+        height: 100px;
+        background-color: #e0d054;
+      }
+
+      .card--3 {
+        background-color: #94d169;
+      }
+
+      .card--4 {
+        width: 320px;
+        height: 80px;
+        background-color: #54b1e0;
+      }
+
+      .card--5 {
+        height: 40px;
+        background-color: #546ee0;
+      }
+
+      .card--6 {
+        width: 100px;
+        height: 100px;
+        background-color: #cd7bd8;
+        margin: 100px;
+      }
+
+      .card--7 {
+        width: 140px;
+        height: 100px;
+        background-color: #db6c8a;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section">
+      <div
+        fb-carousel
+        fb-carousel-direction="left"
+        fb-carousel-pauseable="true"
+        fb-carousel-speed="14000"
+        fb-carousel-delay="2000"
+        fb-carousel-gap="80"
+        fb-carousel-overflow="false"
+        fb-carousel-overflow-size="0"
+        class="carousel"
+      >
+        <div fb-carousel-content class="carousel__content">
+          <div class="card--1">1</div>
+          <div class="card--2">2</div>
+          <div class="card--3" onclick="alert('3 - no fixed width and height')">
+            3 - no fixed width and height
+          </div>
+          <div class="card--4">4</div>
+          <div class="card--5">5 - no fixed width</div>
+          <div class="card--6">6</div>
+          <div class="card--7">7</div>
+
+          <b>HELLO, WORLD!</b>
+
+          Hello, World!
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
