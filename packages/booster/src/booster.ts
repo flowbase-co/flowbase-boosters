@@ -70,13 +70,11 @@ export class Booster<T extends BoosterRecord, K extends Element = Element>
       const attr = this.options.attributes[name]
       const rawValue = el.getAttribute(name)
 
-      if (!rawValue) {
+      if (!rawValue || !this.validate(attr, name, rawValue)) {
         data.set(name, attr.defaultValue)
 
         continue
       }
-
-      if (!this.validate(attr, name, rawValue)) continue
 
       let attrValue = rawValue as T[Extract<keyof T, string>]
 
