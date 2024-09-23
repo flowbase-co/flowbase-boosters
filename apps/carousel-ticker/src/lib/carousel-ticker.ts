@@ -86,7 +86,10 @@ const carouselTickerBooster = new Booster.Booster<
 
     for (const el of Array.from(contentEl.childNodes)) {
       if (el instanceof HTMLElement) {
+        el.style.flexShrink = '0'
+        el.style.flexGrow = '0'
         el.style.willChange = 'transform'
+
         contentChildNodes.push(el)
       } else contentEl.removeChild(el)
     }
@@ -112,25 +115,27 @@ const carouselTickerBooster = new Booster.Booster<
 
     contentEl.style.position = 'relative'
     contentEl.style.display = 'flex'
-    contentEl.style.flexShrink = '0'
-    contentEl.style.flexGrow = '0'
+    contentEl.style.width = '100%'
+    contentEl.style.height = '100%'
     contentEl.style.margin = '0'
     contentEl.style.padding = '0'
     contentEl.style.willChange = 'transform'
 
     contentEl.style.flexDirection = isVertical ? 'column' : 'row'
-    contentEl.style.width = isVertical ? '100%' : 'max-content'
-    contentEl.style.height = isVertical ? 'max-content' : '100%'
     contentEl.style.gap = gap + 'px'
 
-    // Get content element size
+    // Calculate content child elements size
 
-    const contentElSize =
-      Number(
-        contentEl
-          .getBoundingClientRect()
-          [isVertical ? 'height' : 'width'].toFixed(2)
-      ) + gap
+    const contentChildNodesSize = Number(
+      contentChildNodes
+        .reduce((size, el) => {
+          const { width, height } = el.getBoundingClientRect()
+          const elSize = isVertical ? height : width
+
+          return size + elSize
+        }, gap * contentChildNodes.length)
+        .toFixed(2)
+    )
 
     // Get initial element size
 
@@ -146,9 +151,10 @@ const carouselTickerBooster = new Booster.Booster<
     let overflowDuplicateCount = 0
 
     if (overflowSize) {
-      overflowDuplicateCount = Math.ceil(overflowSize / contentElSize)
+      overflowDuplicateCount = Math.ceil(overflowSize / contentChildNodesSize)
 
-      const offset = -1 * (contentElSize * overflowDuplicateCount) + 'px'
+      const offset =
+        -1 * (contentChildNodesSize * overflowDuplicateCount) + 'px'
 
       if (isVertical) {
         contentEl.style.top = offset
@@ -163,7 +169,9 @@ const carouselTickerBooster = new Booster.Booster<
       const { width, height } = element.getBoundingClientRect()
       const elSize = isVertical ? height : width
 
-      return Math.ceil(elSize / contentElSize) + overflowDuplicateCount * 2
+      return (
+        Math.ceil(elSize / contentChildNodesSize) + overflowDuplicateCount * 2
+      )
     }
 
     let duplicateCount = getDuplicateCount()
@@ -208,7 +216,7 @@ const carouselTickerBooster = new Booster.Booster<
 
     const translateDirection = isVertical ? 'Y' : 'X'
     const startPosition = 0
-    const endPosition = -1 * contentElSize
+    const endPosition = -1 * contentChildNodesSize
     const reverse = direction === 'bottom' || direction === 'right'
 
     const keyframes = new KeyframeEffect(
