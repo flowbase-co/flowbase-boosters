@@ -79,7 +79,11 @@ function setupArrows(this: BoosterBase, element: HTMLElement) {
   }
 }
 
-function setupNavigation(this: BoosterBase, element: HTMLElement) {
+function setupNavigation(
+  this: BoosterBase,
+  element: HTMLElement,
+  webflowNavItems: HTMLElement[]
+) {
   const inactiveItemEl = element.querySelector<HTMLElement>(
     `[${CustomSliderAttrNames.NavItem}=${SliderNav.Inactive}]`
   )
@@ -93,14 +97,6 @@ function setupNavigation(this: BoosterBase, element: HTMLElement) {
   if (!activeItemEl) return this.log(`Active Nav Element isn't detected`)
 
   activeItemEl.remove()
-
-  const webflowNavItems = Array.from(
-    element.querySelectorAll<HTMLElement>('.w-slider-nav .w-slider-dot')
-  )
-
-  if (!webflowNavItems.length) {
-    return this.log(`Webflow Slider Nav isn't detected`)
-  }
 
   const attrsToCopy = ['aria-label', 'aria-pressed', 'role', 'tabindex']
   const copyNavItemAttrs = (
@@ -174,7 +170,28 @@ const customSliderBooster = new Booster.Booster<{}, HTMLElement>({
   attributes: {},
   apply(element) {
     setupArrows.call(this, element)
-    setupNavigation.call(this, element)
+
+    const webflowNavEl = element.querySelector<HTMLElement>('.w-slider-nav')
+
+    if (!webflowNavEl) return this.log(`Webflow Slider Nav isn't detected`)
+
+    let observer: MutationObserver | undefined
+
+    const initNavigation = () => {
+      const webflowNavItems = Array.from(
+        webflowNavEl.querySelectorAll<HTMLElement>('.w-slider-dot')
+      )
+
+      if (webflowNavItems.length) {
+        setupNavigation.call(this, element, webflowNavItems)
+        observer?.disconnect()
+      } else if (!observer) {
+        observer = new MutationObserver(initNavigation)
+        observer.observe(webflowNavEl, { childList: true })
+      }
+    }
+
+    initNavigation()
   },
   title: 'Webflow Custom Slider Booster',
   documentationLink: 'https://www.flowbase.co/booster/webflow-custom-slider',
