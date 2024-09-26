@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-custom-slider-webflow
 
+## 2.0.1
+
+### Patch Changes
+
+- 1ec672c: Fixed the issue with the display of custom navigation.
+
 ## 2.0.0
 
 ### Major Changes
