@@ -4,7 +4,6 @@ enum CarouselTickerAttrNames {
   Root = 'fb-carousel',
   Delay = 'fb-carousel-delay',
   Direction = 'fb-carousel-direction',
-  Gap = 'fb-carousel-gap',
   Overflow = 'fb-carousel-overflow',
   OverflowSize = 'fb-carousel-overflow-size',
   PauseOnHover = 'fb-carousel-pauseable',
@@ -25,7 +24,6 @@ enum CarouselTickerDirection {
 type CarouselTickerAttributes = {
   [CarouselTickerAttrNames.Delay]: number
   [CarouselTickerAttrNames.Direction]: CarouselTickerDirection
-  [CarouselTickerAttrNames.Gap]: number
   [CarouselTickerAttrNames.Overflow]: boolean
   [CarouselTickerAttrNames.OverflowSize]: number
   [CarouselTickerAttrNames.PauseOnHover]: boolean
@@ -46,11 +44,6 @@ const carouselTickerBooster = new Booster.Booster<
     [CarouselTickerAttrNames.Direction]: {
       defaultValue: CarouselTickerDirection.Left,
       validate: Object.values(CarouselTickerDirection),
-    },
-    [CarouselTickerAttrNames.Gap]: {
-      defaultValue: 0,
-      validate: Booster.validation.isNumber,
-      parse: Number,
     },
     [CarouselTickerAttrNames.Overflow]: {
       defaultValue: false,
@@ -103,10 +96,6 @@ const carouselTickerBooster = new Booster.Booster<
       direction === CarouselTickerDirection.Top ||
       direction === CarouselTickerDirection.Bottom
 
-    // Gap
-
-    const gap = data.get(CarouselTickerAttrNames.Gap)
-
     // Set styles
 
     element.style.overflow = data.get(CarouselTickerAttrNames.Overflow)
@@ -119,23 +108,44 @@ const carouselTickerBooster = new Booster.Booster<
     contentEl.style.height = '100%'
     contentEl.style.margin = '0'
     contentEl.style.padding = '0'
+    contentEl.style.overflow = 'visible'
     contentEl.style.willChange = 'transform'
-
     contentEl.style.flexDirection = isVertical ? 'column' : 'row'
-    contentEl.style.gap = gap + 'px'
 
     // Calculate content child elements size
 
-    const contentChildNodesSize = Number(
-      contentChildNodes
-        .reduce((size, el) => {
-          const { width, height } = el.getBoundingClientRect()
-          const elSize = isVertical ? height : width
+    const calcContentChildNodesSize = () => {
+      const createChildEl = () => {
+        const el = document.createElement('div')
 
-          return size + elSize
-        }, gap * contentChildNodes.length)
-        .toFixed(2)
-    )
+        el.style.width = '0'
+        el.style.height = '0'
+        el.setAttribute('aria-hidden', 'true')
+
+        return el
+      }
+
+      const firstChildEl = createChildEl()
+      const lastChildEl = createChildEl()
+
+      contentEl.prepend(firstChildEl)
+      contentEl.append(lastChildEl)
+
+      const offsetStart =
+        firstChildEl.getBoundingClientRect()[isVertical ? 'top' : 'left']
+
+      firstChildEl.remove()
+
+      const size =
+        lastChildEl.getBoundingClientRect()[isVertical ? 'top' : 'left'] -
+        offsetStart
+
+      lastChildEl.remove()
+
+      return Number(size.toFixed(2))
+    }
+
+    const contentChildNodesSize = calcContentChildNodesSize()
 
     // Get initial element size
 
