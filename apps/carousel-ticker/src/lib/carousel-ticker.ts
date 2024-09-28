@@ -1,4 +1,4 @@
-import Booster from '@flowbase-co/booster'
+import Booster, { BoosterBase } from '@flowbase-co/booster'
 
 enum CarouselTickerAttrNames {
   Root = 'fb-carousel',
@@ -28,6 +28,23 @@ type CarouselTickerAttributes = {
   [CarouselTickerAttrNames.OverflowSize]: number
   [CarouselTickerAttrNames.PauseOnHover]: boolean
   [CarouselTickerAttrNames.Speed]: number
+}
+
+// Initialize Webflow interactions
+
+function initWebflowInteractions(this: BoosterBase) {
+  if (window.Webflow) {
+    try {
+      const ix2Module = window.Webflow.require<WebflowIx2Module>('ix2')
+
+      if (ix2Module) {
+        ix2Module.init()
+        document.dispatchEvent(new Event('readystatechange'))
+      }
+    } catch (error) {
+      this.log('Failed to initialize Webflow interactions', { error })
+    }
+  }
 }
 
 const carouselTickerBooster = new Booster.Booster<
@@ -203,6 +220,7 @@ const carouselTickerBooster = new Booster.Booster<
     }
 
     duplicateNodes(duplicateCount)
+    initWebflowInteractions.call(this)
 
     // If element size isn't specified, set fixed size
 
@@ -298,6 +316,7 @@ const carouselTickerBooster = new Booster.Booster<
           }
         } else {
           duplicateNodes(newDuplicateCount - duplicateCount)
+          initWebflowInteractions.call(this)
         }
 
         duplicateCount = newDuplicateCount
