@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-carousel-ticker
 
+## 1.1.1
+
+### Patch Changes
+
+- 67d471d: Reinitialize Webflow interactions after duplicating content child elements.
+
 ## 1.1.0
 
 ### Minor Changes
