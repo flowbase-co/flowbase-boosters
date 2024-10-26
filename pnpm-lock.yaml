@@ -34,6 +34,18 @@ importers:
         specifier: ^4.2.1
         version: 4.5.0(@types/node@12.20.55)
 
+  apps/before-after:
+    devDependencies:
+      '@flowbase-co/booster':
+        specifier: 1.0.1
+        version: link:../../packages/booster
+      '@flowbase-co/tsconfig':
+        specifier: 1.0.0
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.5(@types/node@22.7.8)
+
   apps/before-after-framer:
     dependencies:
       '@emotion/core':

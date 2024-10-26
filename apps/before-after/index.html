@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowbase Boosters - Before After Slider</title>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+
+        margin: 0;
+        padding: 40px;
+      }
+
+      .wrapper {
+        width: 600px;
+        height: 400px;
+        border-radius: 24px;
+        background: #e4e6f1;
+      }
+
+      .image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .after-image {
+        transform: scale(-1, -1);
+      }
+
+      .handle {
+        width: 80px;
+        height: 80px;
+        padding: 10px;
+
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgIDxwYXRoIGZpbGw9IiMwMDAiIGQ9Ik0xMC4yNTU5ODUxIDEuOTA1MTIxNzRjLjk1NDU0OTUtLjk5MTc3NTIzIDIuNTMzNDgwMy0uOTkxNzc1MjMgMy40ODgwMjk4IDAgLjU5MzgzODguNjE3Mjc3NzkgMS40NjU2NTMuODc1MjU2MjYgMi4yOTY0ODYxLjY3OTYyOTA4IDEuMzM0NTkwOC0uMzE0MDk0NjMgMi42NjI5OTU5LjU0NjM1MzE5IDIuOTM0MDEyMiAxLjkwMDU0NTMuMTY4NTYzNi44NDMzMDEyMi43NjM1NjIzIDEuNTM1NDAwNTUgMS41NjczMzI0IDEuODIzMzg1NTggMS4yOTE2NzY3LjQ2Mjk1ODM0IDEuOTQ3MzczNyAxLjkxMTA2NzA4IDEuNDQ5MDI4NSAzLjE5Nzg0MTg1LS4zMTA0NTA5LjgwMTIxNDA1LS4xODEzMjE4IDEuNzA3NjQ1OTUuMzQwNjA2OCAyLjM4ODA1NDQ1LjgzODE3ODggMS4wOTM0ODU4LjYxMzU1NjEgMi42Njg2MzUzLS40OTY0MTIxIDMuNDc5OTgxNS0uNjkwODc4OS41MDQ2NTU3LTEuMDY4MjE0IDEuMzM3NDM1Mi0uOTk0MzcwOCAyLjE5NDM3NTcuMTE4NjkwNSAxLjM3NjQwNDgtLjkxNTUwMTUgMi41NzkzOTUtMi4yODQxMTQ0IDIuNjU2OTQ0NC0uODUxNzEwMi4wNDc5MzI2LTEuNjE2MDQ1Ny41NDMyMzU3LTIuMDEzNDg0NyAxLjMwNDMxMTEtLjYzODI5OTQgMS4yMjI0NzUtMi4xNTM0Mzg5IDEuNjcxMDE0Ni0zLjM0NjUyOTIuOTkwMjE2NS0uNzQyMjk4NS0uNDIzNTk5MS0xLjY1MDg0MDktLjQyMzU5OTEtMi4zOTMxMzk0IDAtMS4xOTMwOTAyNy42ODA3OTgxLTIuNzA4MjI5ODEuMjMyMjU4NS0zLjM0NjUyOTIxLS45OTAyMTY1LS4zOTc0MzktLjc2MTA3NTQtMS4xNjE3NzQ1MS0xLjI1NjM3ODUtMi4wMTM0ODQ3My0xLjMwNDMxMTEtMS4zNjg2MTI5LS4wNzc1NDk0LTIuNDAyODA0ODUtMS4yODA1Mzk2LTIuMjg0MTE0NDEtMi42NTY5NDQ0LjA3Mzg0MzI0LS44NTY5NDA1LS4zMDM0OTE4NC0xLjY4OTcyLS45OTQzNzA3Mi0yLjE5NDM3NTctMS4xMDk5NjgyNi0uODExMzQ2Mi0xLjMzNDU5MDg4LTIuMzg2NDk1Ny0uNDk2NDEyMTQtMy40Nzk5ODE1LjUyMTkyODY1LS42ODA0MDg1LjY1MTA1NzY2LTEuNTg2ODQwNC4zNDA2MDY3Ny0yLjM4ODA1NDQ1LS40OTgzNDUyLTEuMjg2Nzc0NzcuMTU3MzUxODItMi43MzQ4ODM1MSAxLjQ0OTAyODU3LTMuMTk3ODQxODUuODAzNzcwMTEtLjI4Nzk4NTAzIDEuMzk4NzY4NzctLjk4MDA4NDM2IDEuNTY3MzMyMzktMS44MjMzODU1OC4yNzEwMTYyOS0xLjM1NDE5MjExIDEuNTk5NDIxMzUtMi4yMTQ2Mzk5MyAyLjkzNDAxMjIzLTEuOTAwNTQ1My44MzA4MzMwOC4xOTU2MjcxOCAxLjcwMjY0NzIzLS4wNjIzNTEyOSAyLjI5NjQ4NjA1LS42Nzk2MjkwOFoiLz4KICAgIDxwYXRoIGZpbGw9IiNGN0Y4RkQiIGQ9Im0xMC4wODI4MDI5IDEzLjMyMTY0NTQuMDAxMTA3Ni4wNjUxMzJjLjAxOTQwMjcuNzY5ODQxNC42NDYzNjU0IDEuMzkwNDcxMiAxLjQyNDA2MjMgMS40MDk2Nzc5bC4wNjU3OTY3LjAwMTA5NjRjLjYxMTM3NDIuMDI3NTE1My42MTEzNzQyLjkzNTczMDMgMCAuOTYzMjQ1NmwtLjA2NTc5ODIuMDAxMDk2M2MtLjc3NzcyNzMuMDE5MjA0MS0xLjQwNDY1OTEuNjM5NzQ4Ni0xLjQyNDA2MDkgMS40MDk1NTYzbC0uMDAxMTA3NS4wNjUxMzA1Yy0uMDI3Nzk2MS42MDUxOTg3LS45NDUyNzg1Ni42MDUxOTg3LS45NzMwNzQ2OCAwbC0uMDAxMTA3NDktLjA2NTEzMTljLS4wMTkzOTkwNi0uNzY5ODM3OC0uNjQ2MjQ0ODItMS4zOTAzNTE4LTEuNDIzOTM4MDgtMS40MDk1NTQ5bC0uMDY1Nzk2NTktLjAwMTA5NjNjLS42MTEzNzQxOS0uMDI3NTE1My0uNjExMzc0MTktLjkzNTczMDMgMC0uOTYzMjQ1NmwuMDY1Nzk1MS0uMDAxMDk2NGMuNzc3NjYyOS0uMDE5MjA1OCAxLjQwNDUzOTUyLS42Mzk4MDUgMS40MjM5Mzk1NS0xLjQwOTY3NjRsLjAwMTEwNzUxLS4wNjUxMzM1Yy4wMjc3OTYxMi0uNjA1MTk4Ny45NDUyNzg1OC0uNjA1MTk4Ny45NzMwNzQ2OCAwWm00LjgxMDM2MzYtNC40NzI2NTg2LjAwMDM2OTguMDQ1MTkzOThjLjAyNDEzMzMgMS40NzM0NzQ1MiAxLjIyNjI0NjIgMi42NjM0NDQ4MiAyLjcxNDc1NjEgMi42ODczMzQzMmwuMDQ1NjU1Mi4wMDAzNjYxYy42NDk1NzYgMCAuNjQ5NTc2Ljk2NDUyMiAwIC45NjQ1MjItMS41MjQ3NTcxIDAtMi43NjA3ODExIDEuMjIzNTM5LTIuNzYwNzgxMSAyLjczMjg5NDUgMCAuNjQzMDE0Ni0uOTc0MzY0MS42NDMwMTQ2LS45NzQzNjQxIDBsLS4wMDAzNjk5LS4wNDUxOTcyYy0uMDIzODI3NS0xLjQ1NDc4NDMtMS4xOTU4NzUxLTIuNjMzMjc5My0yLjY1ODA2MjYtMi42ODYwOTU4bC0uMTMxMTI0NC0uMDAyNDg2Yy0uNjIwNzc5OS0uMDI3OTM4Ni0uNjExMjI5NS0uOTYzODgzOC4wMjg2NTE0LS45NjM4ODM4bC4wNDU2NTc4LS4wMDAzNjYxYzEuNDY5NjA4NC0uMDIzNTgxNyAyLjY2MDAzMDMtMS4xODM1NDA2IDIuNzEzMzgxMi0yLjYzMDg1MTI5bC4wMDI1MTEyLS4xMjk3OTI2OGMuMDI4MjIzOC0uNjE0NTA5NDUuOTczNzE5NC0uNjA1MDU1NDYuOTczNzE5NC4wMjgzNjE5N1ptLTcuMjcyNTU5MDcgMi4wMjE1ODcuMDA0MzMyNjQuMDgxNDMxOWMuMDAzNDM1OTIuMDI5OTU0MS4wMTUzMjQ0OC4wNTgzNjE4LjAzNDI5NDA1LjA4MTk0NThsLjAxMjIyMDQ5LjAxMzU0NTJjLjAzMDQ0NTk1LjAzMDEzMjcuMDcxNzM4MzkuMDQ3MDU2OS4xMTQ3OTEzNS4wNDcwNDg4LjY0OTY2OTM3IDAgLjY0OTc2MjY4Ljk2NDM5ODguMDAwMTg2NjYuOTY0NTIxOS0uMDg5NzM1MjUgMWUtNy0uMTYyNDA0MzkuMDcxOTM1Mi0uMTYyNDA0MzkuMTYwNjcxNi0xZS04IC42MjE1ODA5LS45MTA0ODkwOC42NDIzMDAyLS45NzExODgzNS4wNjIxNTgxbC0uMDA0MjExOTctLjA4MDI4OTljLS4wMDM0MzU5Mi0uMDI5OTU0LS4wMTUzMjQ0OC0uMDU4MzYxOC0uMDM0Mjk0MDUtLjA4MTk0NTdsLS4wMTIyMjA0OS0uMDEzNTQ1M2MtLjAzMDQ0NTk1LS4wMzAxMzI3LS4wNzE3MzgzOS0uMDQ3MDU2OS0uMTE0NzkxMzUtLjA0NzA0ODhsLS4wMjg3NDQ3Ny0uMDAwNjM4Yy0uNTk5Mzc2MzYtLjAyNjk3MTktLjYxMTIyNTc2LS45MDAzMDIzLS4wMzUzODc2NC0uOTYwNjA5MWwuMDgwNjM0NDQtLjAwNDEwNDRjLjA4MTg0NjM0LS4wMDgyMjguMTQ1NzE1Ny0uMDc2NjUxNi4xNDU3MTU3LS4xNTk4NDJsLjAwMDY0NDY5LS4wMjgzNjJjLjAyNzI1MDUzLS41OTMzMTk0LjkwOTYwMzQ2LS42MDQ5NjU1Ljk3MDQyMjk5LS4wMzQ5MzgxWk0xMS4wNTQ1MTUgNy44ODY2NzIybC4wMDM5MzM2LjA4ODA1MzE1Yy4wMTI2NTcuMjQ2NTY5MTQuMjEyMzkwMi40NDQyNTk1Ny40NjE0NzcuNDU2NzU3MjFsLjA1MzY1NzMuMDAxMjYyMDJjLjU5OTM3NTUuMDI2OTAxNzguNjExMTk2Ny45MDA0MTM4LjAzNTM1NjYuOTYwNjI0MDNsLS4wOTM2NDM1LjAwNDE2Mzk2Yy0uMTE4MzE5My4wMDcxNjk0Ni0uMjMwMzg2MS4wNTY4OTg4MS0uMzE0NzExNi4xNDAzOTM5MS0uMDkxMzUyNy4wOTA0NTMwMy0uMTQyNjY0OC4yMTMxMjQ0OS0uMTQyNjQ4My4zNDEwMjgwNmwtLjAwMDcwNDEuMDI4MzA1OTVjLS4wMjc3MzQzLjYwNTMxODExLS45NDUxMzk5LjYwNTM3NjExLS45NzMwMTE3LjAwMDE3OTE2bC0uMDAxNTU0NC0uMDU3ODM2ODljLS4wMDY2MjY0LS4xMDc0MTc4Ny0uMDQ5Mzg2My0uMjA5NTk3NTMtLjEyMTQzNjk1LS4yOTAxODcwNWwtLjAyMDM3MTI1LS4wMjE0MzEzOGMtLjA3ODMyMzgzLS4wNzc1MjI3OS0uMTgwNTY1NS0uMTI1OTIxNi0uMjg5NTUzMzMtLjEzODE1NzQ1bC0uMDgzNjkwMjQtLjAwMzcwOTg3Yy0uNTk5Mzc1NDgtLjAyNjk3Mjk4LS42MTExOTY3MS0uOTAwMzQwMDQtLjAzNTM1NjY0LS45NjA2MTI5OGwuMDg5MDc4MzktLjAwMzg5ODQxYy4yNDAyNTE0OC0uMDEyMDU1MzYuNDM0NTg0MjItLjE5NjM5Nzc0LjQ1OTQyNzQyLS40MzA3MDQ2N2wuMDAzMzI1NC0uMDc5MjI5MjRjLjAyNzE3NjMtLjU5MzMyMTE4LjkwOTYwMTctLjYwNTAyMzAyLjk3MDQyNjMtLjAzNDk5OTUxWiIvPgogIDwvZz4KPC9zdmc+');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 60px;
+      }
+
+      .label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 72px;
+        height: 34px;
+        border-radius: 32px;
+
+        background-color: #000;
+        cursor: pointer;
+
+        font-family: system-ui;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        color: #fff;
+      }
+
+      .label-left {
+        top: 24px;
+        left: 24px;
+      }
+
+      [fb-before-after-direction='horizontal'] .label-right {
+        top: 24px;
+        right: 24px;
+      }
+
+      [fb-before-after-direction='vertical'] .label-right {
+        left: 24px;
+        bottom: 24px;
+      }
+
+      .line {
+        position: absolute;
+        z-index: 1;
+        background: #000;
+      }
+
+      [fb-before-after-direction='horizontal'] .line {
+        top: 0;
+        bottom: 0;
+        left: var(--thumb-position, 50%);
+        transform: translateX(-50%);
+        width: 1px;
+      }
+
+      [fb-before-after-direction='vertical'] .line {
+        top: var(--thumb-position, 50%);
+        right: 0;
+        left: 0;
+        transform: translateY(-50%);
+        height: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      fb-before-after
+      fb-before-after-start="70"
+      fb-before-after-direction="horizontal"
+      class="wrapper"
+    >
+      <img
+        src="https://framerusercontent.com/images/yb06Eb1cbfTwy1bpcsE9jxLTk.jpg"
+        class="image"
+      />
+      <div fb-before-after-side="after">
+        <img
+          src="https://framerusercontent.com/modules/g9fqTl1KcXIIOXtl3beR/rMHZEWdnbkd58MTmzjTP/assets/Vy3aouR1Uno1R41bvMk8Z4DvE.jpg"
+          class="image after-image"
+        />
+      </div>
+
+      <div fb-before-after-handle class="handle"></div>
+      <div class="line"></div>
+
+      <div fb-before-after-label="before" class="label label-left">
+        Before
+      </div>
+      <div fb-before-after-label="after" class="label label-right">After</div>
+    </div>
+
+    <div
+      fb-before-after
+      fb-before-after-start="40"
+      fb-before-after-direction="vertical"
+      class="wrapper"
+    >
+      <div>
+        <img
+          src="https://framerusercontent.com/images/yb06Eb1cbfTwy1bpcsE9jxLTk.jpg"
+          class="image"
+        />
+      </div>
+      <div fb-before-after-side="after">
+        <img
+          src="https://framerusercontent.com/modules/g9fqTl1KcXIIOXtl3beR/rMHZEWdnbkd58MTmzjTP/assets/Vy3aouR1Uno1R41bvMk8Z4DvE.jpg"
+          class="image after-image"
+        />
+      </div>
+
+      <div fb-before-after-handle class="handle"></div>
+      <div class="line"></div>
+
+      <div fb-before-after-label="before" class="label label-left">Light</div>
+      <div fb-before-after-label="after" class="label label-right">Dark</div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
