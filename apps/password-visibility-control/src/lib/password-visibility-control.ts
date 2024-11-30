@@ -88,8 +88,7 @@ const passwordVisibilityControlBooster = new Booster.Booster<{}, HTMLElement>({
     updateStateElements()
   },
   title: 'Password Visibility Control Booster',
-  documentationLink:
-    'https://www.flowbase.co/booster/password-visibility-control',
+  documentationLink: 'https://www.flowbase.co/booster/show-and-hide-password',
 })
 
 export const PasswordVisibilityControlFlowbase = () =>

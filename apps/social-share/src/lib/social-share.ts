@@ -67,7 +67,7 @@ const socialShareBooster = new Booster.Booster<SocialShareAttributes, Element>({
     element.setAttribute('target', '_blank')
   },
   title: 'Social Share Booster',
-  documentationLink: 'https://www.flowbase.co/booster/social-share',
+  documentationLink: 'https://www.flowbase.co/booster/share-to-social-media',
 })
 
 export const SocialShareFlowbase = () => socialShareBooster.init()

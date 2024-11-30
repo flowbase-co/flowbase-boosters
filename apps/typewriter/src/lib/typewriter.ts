@@ -126,7 +126,7 @@ const typewriterBooster = new Booster.Booster<TypewriterAttributes, Element>({
     new Typed(typedEl, typedOptions)
   },
   title: 'Typewriter Booster',
-  documentationLink: 'https://www.flowbase.co/booster/typewriter',
+  documentationLink: 'https://www.flowbase.co/booster/typewriter-animation',
 })
 
 export const TypewriterFlowbase = () => typewriterBooster.init()
