@@ -1,0 +1,44 @@
+{
+  "name": "@flowbase-co/boosters-text-reveal",
+  "description": "",
+  "homepage": "https://www.flowbase.co/",
+  "version": "0.0.0",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
+  },
+  "main": "dist/text-reveal.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "webflow",
+    "attributes",
+    "flowbase",
+    "no code",
+    "text reveal",
+    "gsap"
+  ],
+  "author": {
+    "name": "Flowbase",
+    "url": "https://www.flowbase.co/"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@flowbase-co/split-text": "workspace:*",
+    "colord": "^2.9.3",
+    "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "@flowbase-co/booster": "workspace:*",
+    "@flowbase-co/tsconfig": "workspace:*",
+    "vite": "^4.2.1"
+  }
+}
