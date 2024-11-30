@@ -212,7 +212,7 @@ const ageGateBooster = new Booster.Booster<AgeGateAttributes, HTMLElement>({
     }
   },
   title: 'Age Gate Booster',
-  documentationLink: 'https://www.flowbase.co/booster/age-gate',
+  documentationLink: 'https://www.flowbase.co/booster/age-gate-webflow',
 })
 
 export const AgeGateFlowbase = () => ageGateBooster.init()

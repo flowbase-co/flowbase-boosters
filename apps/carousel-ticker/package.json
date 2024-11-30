@@ -32,8 +32,10 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@flowbase-co/booster": "1.0.1",
-    "@flowbase-co/tsconfig": "1.0.0",
+    "@flowbase-co/tsconfig": "workspace:*",
     "vite": "^4.2.1"
+  },
+  "dependencies": {
+    "@flowbase-co/booster": "1.0.1"
   }
 }

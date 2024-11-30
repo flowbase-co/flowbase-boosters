@@ -34,7 +34,7 @@
     "counterup2": "^2.0.2"
   },
   "devDependencies": {
-    "@flowbase-co/tsconfig": "1.0.0",
+    "@flowbase-co/tsconfig": "workspace:*",
     "vite": "^4.2.1"
   }
 }
