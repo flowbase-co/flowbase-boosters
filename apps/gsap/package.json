@@ -1,0 +1,41 @@
+{
+  "name": "@flowbase-co/boosters-gsap",
+  "description": "",
+  "homepage": "https://www.flowbase.co/",
+  "version": "0.0.0",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
+  },
+  "main": "dist/gsap.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "webflow",
+    "attributes",
+    "flowbase",
+    "no code",
+    "gsap"
+  ],
+  "author": {
+    "name": "Flowbase",
+    "url": "https://www.flowbase.co/"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@flowbase-co/booster": "workspace:*",
+    "@flowbase-co/tsconfig": "workspace:*",
+    "vite": "^4.2.1"
+  },
+  "dependencies": {
+    "gsap": "3.12.5"
+  }
+}
