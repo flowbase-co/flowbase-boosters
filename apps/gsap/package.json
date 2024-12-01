@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-gsap",
   "description": "",
   "homepage": "https://www.flowbase.co/",
-  "version": "0.0.0",
+  "version": "3.12.5",
   "type": "module",
   "publishConfig": {
     "access": "public"
