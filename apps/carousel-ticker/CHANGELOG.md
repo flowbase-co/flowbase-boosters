@@ -1,5 +1,12 @@
 # @flowbase-co/boosters-carousel-ticker
 
+## 1.1.2
+
+### Patch Changes
+
+- Updated dependencies [c92fa00]
+  - @flowbase-co/booster@1.1.0
+
 ## 1.1.1
 
 ### Patch Changes

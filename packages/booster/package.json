@@ -2,7 +2,7 @@
   "name": "@flowbase-co/booster",
   "description": "Flowbase Base Booster",
   "homepage": "https://www.flowbase.co/",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },

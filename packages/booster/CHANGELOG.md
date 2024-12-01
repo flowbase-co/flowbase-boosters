@@ -1,5 +1,11 @@
 # @flowbase-co/booster
 
+## 1.1.0
+
+### Minor Changes
+
+- c92fa00: Add dependencies, extend validation
+
 ## 1.0.1
 
 ### Patch Changes

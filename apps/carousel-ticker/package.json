@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-carousel-ticker",
   "description": "",
   "homepage": "https://www.flowbase.co/",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
   "publishConfig": {
     "access": "public"
@@ -36,6 +36,6 @@
     "vite": "^4.2.1"
   },
   "dependencies": {
-    "@flowbase-co/booster": "1.0.1"
+    "@flowbase-co/booster": "1.1.0"
   }
 }
