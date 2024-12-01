@@ -1,6 +1,6 @@
 {
-  "name": "@flowbase-co/boosters-text-highlight",
-  "description": "",
+  "name": "@flowbase-co/boosters-gsap-text-highlight",
+  "description": "Capture attention effortlessly with dynamic and visually stunning GSAP text highlight effects",
   "homepage": "https://www.flowbase.co/",
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
   },
-  "main": "dist/text-highlight.js",
+  "main": "dist/gsap-text-highlight.js",
   "files": [
     "dist"
   ],
@@ -20,8 +20,8 @@
     "attributes",
     "flowbase",
     "no code",
-    "text highlight",
-    "gsap"
+    "gsap",
+    "text highlight"
   ],
   "author": {
     "name": "Flowbase",

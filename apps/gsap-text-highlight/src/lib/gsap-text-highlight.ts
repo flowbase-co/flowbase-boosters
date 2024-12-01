@@ -270,8 +270,8 @@ const textHighlightBooster = new Booster.Booster<
         })
     }
   },
-  title: 'Text Highlight Booster',
-  documentationLink: 'https://www.flowbase.co/booster/text-highlight',
+  title: 'GSAP Text Highlight Booster',
+  documentationLink: 'https://www.flowbase.co/booster/gsap-text-highlight',
 })
 
 export const TextHighlightFlowbase = async () => {

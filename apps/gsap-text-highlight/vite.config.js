@@ -11,8 +11,8 @@ export default defineConfig({
     lib: {
       entry: './src/lib/index.ts',
       formats: ['iife'],
-      name: 'texthighlight',
-      fileName: () => 'text-highlight.js',
+      name: 'gsaptexthighlight',
+      fileName: () => 'gsap-text-highlight.js',
     },
   },
 })
