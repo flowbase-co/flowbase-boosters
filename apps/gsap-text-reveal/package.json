@@ -1,6 +1,6 @@
 {
-  "name": "@flowbase-co/boosters-text-reveal",
-  "description": "",
+  "name": "@flowbase-co/boosters-gsap-text-reveal",
+  "description": "Reveal text as it scrolls into view with elegant and eye-catching GSAP effects",
   "homepage": "https://www.flowbase.co/",
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
   },
-  "main": "dist/text-reveal.js",
+  "main": "dist/gsap-text-reveal.js",
   "files": [
     "dist"
   ],
@@ -20,8 +20,8 @@
     "attributes",
     "flowbase",
     "no code",
-    "text reveal",
-    "gsap"
+    "gsap",
+    "text reveal"
   ],
   "author": {
     "name": "Flowbase",

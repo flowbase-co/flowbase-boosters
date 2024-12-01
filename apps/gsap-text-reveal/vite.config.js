@@ -11,8 +11,8 @@ export default defineConfig({
     lib: {
       entry: './src/lib/index.ts',
       formats: ['iife'],
-      name: 'textreveal',
-      fileName: () => 'text-reveal.js',
+      name: 'gsaptextreveal',
+      fileName: () => 'gsap-text-reveal.js',
     },
   },
 })
