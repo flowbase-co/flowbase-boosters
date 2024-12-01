@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-gsap-text-reveal",
   "description": "Reveal text as it scrolls into view with elegant and eye-catching GSAP effects",
   "homepage": "https://www.flowbase.co/",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "publishConfig": {
     "access": "public"

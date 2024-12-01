@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-gsap-text-hover",
   "description": "Add creative GSAP-powered hover effects to any text element directly within the designer",
   "homepage": "https://www.flowbase.co/",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "publishConfig": {
     "access": "public"
