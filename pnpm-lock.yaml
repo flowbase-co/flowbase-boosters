@@ -209,6 +209,88 @@ importers:
         specifier: ^4.2.1
         version: 4.5.5(@types/node@22.10.1)
 
+  apps/gsap:
+    dependencies:
+      gsap:
+        specifier: 3.12.5
+        version: 3.12.5
+    devDependencies:
+      '@flowbase-co/booster':
+        specifier: workspace:*
+        version: link:../../packages/booster
+      '@flowbase-co/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.5(@types/node@22.10.1)
+
+  apps/gsap-text-highlight:
+    dependencies:
+      '@flowbase-co/booster':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@flowbase-co/split-text':
+        specifier: workspace:*
+        version: link:../../packages/split-text
+      colord:
+        specifier: ^2.9.3
+        version: 2.9.3
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
+    devDependencies:
+      '@flowbase-co/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.5(@types/node@22.10.1)
+
+  apps/gsap-text-hover:
+    dependencies:
+      '@flowbase-co/booster':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@flowbase-co/split-text':
+        specifier: workspace:*
+        version: link:../../packages/split-text
+      colord:
+        specifier: ^2.9.3
+        version: 2.9.3
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
+    devDependencies:
+      '@flowbase-co/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.5(@types/node@22.10.1)
+
+  apps/gsap-text-reveal:
+    dependencies:
+      '@flowbase-co/booster':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@flowbase-co/split-text':
+        specifier: workspace:*
+        version: link:../../packages/split-text
+      colord:
+        specifier: ^2.9.3
+        version: 2.9.3
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
+    devDependencies:
+      '@flowbase-co/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      vite:
+        specifier: ^4.2.1
+        version: 4.5.5(@types/node@22.10.1)
+
   apps/password-visibility-control:
     dependencies:
       '@flowbase-co/booster':
@@ -355,6 +437,19 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+
+  packages/split-text:
+    dependencies:
+      split-type:
+        specifier: ^0.3.4
+        version: 0.3.4
+      typescript:
+        specifier: ^4.8.3
+        version: 4.9.5
+    devDependencies:
+      '@flowbase-co/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
 
   packages/tsconfig: {}
 
@@ -699,6 +794,9 @@ packages:
 
   '@flowbase-co/booster@1.0.1':
     resolution: {integrity: sha512-P3hQacSbVvxJO2e0QBw4IYUo1SDRTnGdX5wjZtul9o/jgKrnW6XPxVc0mPJyx8AlTrXD8iPTVTKLCtB+kPFwsA==}
+
+  '@flowbase-co/booster@1.1.0':
+    resolution: {integrity: sha512-yhYH7ZYuHD5YVFg/5YZe3oFLh2j1ry+6Gde/atjLjd/Jq449RgdvfRplzxk7U2munYHw/LLLo9G7owdR/MlbZA==}
 
   '@jest/expect-utils@29.7.0':
     resolution: {integrity: sha512-GlsNBWiFQFCVi9QVSx7f5AgMeLxe9YCCs5PuP2O2LdjDAA8Jh9eX7lA1Jq/xdXw3Wb3hyvlFNfZIfcRetSzYcA==}
@@ -1076,6 +1174,9 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
+  colord@2.9.3:
+    resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
+
   combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
@@ -1352,6 +1453,9 @@ packages:
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
 
   has-bigints@1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
@@ -1970,6 +2074,9 @@ packages:
 
   spawndamnit@3.0.1:
     resolution: {integrity: sha512-MmnduQUuHCoFckZoWnXsTg7JaiLBJrKFj9UI2MbRPGaJeVpsLcVBu6P/IGZovziM/YBsellCmsprgNA+w0CzVg==}
+
+  split-type@0.3.4:
+    resolution: {integrity: sha512-otEk9vnD8qwfLsk3Lx0gz+qRkNIJCx0mlyL47ImP/DjMuV39d75Lpfwjn9fHteDRz0aoOblSzQjSNT9+Sswxcg==}
 
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
@@ -2756,6 +2863,11 @@ snapshots:
     dependencies:
       typescript: 4.9.5
 
+  '@flowbase-co/booster@1.1.0':
+    dependencies:
+      semver: 7.6.3
+      typescript: 4.9.5
+
   '@jest/expect-utils@29.7.0':
     dependencies:
       jest-get-type: 29.6.3
@@ -3221,6 +3333,8 @@ snapshots:
 
   color-name@1.1.4: {}
 
+  colord@2.9.3: {}
+
   combined-stream@1.0.8:
     dependencies:
       delayed-stream: 1.0.0
@@ -3534,6 +3648,8 @@ snapshots:
       get-intrinsic: 1.2.4
 
   graceful-fs@4.2.11: {}
+
+  gsap@3.12.5: {}
 
   has-bigints@1.0.2: {}
 
@@ -4122,6 +4238,8 @@ snapshots:
     dependencies:
       cross-spawn: 7.0.6
       signal-exit: 4.1.0
+
+  split-type@0.3.4: {}
 
   sprintf-js@1.0.3: {}
 

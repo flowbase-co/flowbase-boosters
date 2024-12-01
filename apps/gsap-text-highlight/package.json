@@ -32,12 +32,12 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@flowbase-co/booster": "1.1.0",
     "@flowbase-co/split-text": "workspace:*",
     "colord": "^2.9.3",
     "gsap": "^3.12.5"
   },
   "devDependencies": {
-    "@flowbase-co/booster": "workspace:*",
     "@flowbase-co/tsconfig": "workspace:*",
     "vite": "^4.2.1"
   }
