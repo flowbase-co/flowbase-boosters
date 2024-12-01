@@ -155,8 +155,8 @@ const textHoverBooster = new Booster.Booster<TextHoverAttributes, HTMLElement>({
         })
     }
   },
-  title: 'Text Hover Booster',
-  documentationLink: 'https://www.flowbase.co/booster/text-hover',
+  title: 'GSAP Text Hover Booster',
+  documentationLink: 'https://www.flowbase.co/booster/gsap-text-hover',
 })
 
 export const TextHoverFlowbase = async () => {

@@ -11,8 +11,8 @@ export default defineConfig({
     lib: {
       entry: './src/lib/index.ts',
       formats: ['iife'],
-      name: 'texthover',
-      fileName: () => 'text-hover.js',
+      name: 'gsaptexthover',
+      fileName: () => 'gsap-text-hover.js',
     },
   },
 })
