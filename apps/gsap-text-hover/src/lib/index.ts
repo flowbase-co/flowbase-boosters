@@ -1,4 +1,4 @@
-import { TextHoverFlowbase } from './text-hover'
+import { TextHoverFlowbase } from './gsap-text-hover'
 
 document.readyState === 'complete'
   ? TextHoverFlowbase()
