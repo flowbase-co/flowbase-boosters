@@ -1,4 +1,4 @@
-import { TextRevealFlowbase } from './text-reveal'
+import { TextRevealFlowbase } from './gsap-text-reveal'
 
 document.readyState === 'complete'
   ? TextRevealFlowbase()

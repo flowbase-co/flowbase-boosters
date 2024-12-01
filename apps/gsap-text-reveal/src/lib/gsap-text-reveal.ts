@@ -81,8 +81,8 @@ const textRevealBooster = new Booster.Booster<
         })
     }
   },
-  title: 'Text Reveal Booster',
-  documentationLink: 'https://www.flowbase.co/booster/text-reveal',
+  title: 'GSAP Text Reveal Booster',
+  documentationLink: 'https://www.flowbase.co/booster/gsap-text-reveal',
 })
 
 export const TextRevealFlowbase = async () => {
