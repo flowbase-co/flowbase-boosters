@@ -73,6 +73,7 @@ export class Effect6 {
   setup() {
     this.element.style.position = 'relative'
     this.element.style.display = 'inline-block'
+    this.element.style.isolation = 'isolate'
 
     if (!this.options.allowMultiLine) this.element.style.whiteSpace = 'nowrap'
 
