@@ -31,6 +31,21 @@ export class Effect5 extends Effect3 {
     super(element, gsap, options)
   }
 
+  setup() {
+    if (!this.split.chars) return
+
+    this.originalChars = this.split.chars.map((char) => char.innerHTML)
+
+    this.element.style.position = 'relative'
+    this.element.style.display = 'inline-block'
+    this.element.style.isolation = 'isolate'
+    this.element.style.setProperty('--fb-bg-scale', '0')
+
+    if (!this.options.allowMultiLine) this.element.style.whiteSpace = 'nowrap'
+
+    this.addBgElement()
+  }
+
   addBgElement() {
     const bgEl = document.createElement('div')
 
