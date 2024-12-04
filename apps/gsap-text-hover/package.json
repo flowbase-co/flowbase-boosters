@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@flowbase-co/tsconfig": "workspace:*",
-    "vite": "^4.2.1"
+    "vite": "^4.2.1",
+    "vite-plugin-banner": "^0.8.0"
   }
 }
