@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-gsap-text-hover
 
+## 1.0.2
+
+### Patch Changes
+
+- a7f42e4: Add license
+
 ## 1.0.1
 
 ### Patch Changes
