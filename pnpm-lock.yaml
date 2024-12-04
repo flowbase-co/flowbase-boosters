@@ -246,6 +246,9 @@ importers:
       vite:
         specifier: ^4.2.1
         version: 4.5.5(@types/node@22.10.1)
+      vite-plugin-banner:
+        specifier: ^0.8.0
+        version: 0.8.0
 
   apps/gsap-text-hover:
     dependencies:
@@ -268,6 +271,9 @@ importers:
       vite:
         specifier: ^4.2.1
         version: 4.5.5(@types/node@22.10.1)
+      vite-plugin-banner:
+        specifier: ^0.8.0
+        version: 0.8.0
 
   apps/gsap-text-reveal:
     dependencies:
@@ -290,6 +296,9 @@ importers:
       vite:
         specifier: ^4.2.1
         version: 4.5.5(@types/node@22.10.1)
+      vite-plugin-banner:
+        specifier: ^0.8.0
+        version: 0.8.0
 
   apps/password-visibility-control:
     dependencies:
@@ -2259,6 +2268,9 @@ packages:
     resolution: {integrity: sha512-vTikpU/J7e6LU/8iM3dzBo8ZhEiKZEKRznEMm+mJh95XhWaPrJQraT/QsT2NWmuEf+zgAoMe64PKT7hfZ1Njmg==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
+
+  vite-plugin-banner@0.8.0:
+    resolution: {integrity: sha512-JpDWDYxtrsytuvUOJCgJcTkBb6XM8yPOidjRtB6F5SW1JSzDd/Y+PD/44wR6ovWKXhSUiyDRqPvx7mMf8+8ELg==}
 
   vite-plugin-css-injected-by-js@3.5.2:
     resolution: {integrity: sha512-2MpU/Y+SCZyWUB6ua3HbJCrgnF0KACAsmzOQt1UvRVJCGF6S8xdA3ZUhWcWdM9ivG4I5az8PnQmwwrkC2CAQrQ==}
@@ -4397,6 +4409,8 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+
+  vite-plugin-banner@0.8.0: {}
 
   vite-plugin-css-injected-by-js@3.5.2(vite@4.5.5(@types/node@22.10.1)):
     dependencies:
