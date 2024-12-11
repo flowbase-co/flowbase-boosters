@@ -8,6 +8,7 @@ enum CarouselTickerAttrNames {
   OverflowSize = 'fb-carousel-overflow-size',
   PauseOnHover = 'fb-carousel-pauseable',
   Speed = 'fb-carousel-speed',
+  Trigger = 'fb-carousel-trigger',
 
   // Elements
 
@@ -21,6 +22,11 @@ enum CarouselTickerDirection {
   Bottom = 'bottom',
 }
 
+enum CarouselTickerTrigger {
+  InView = 'in-view',
+  OnLoad = 'on-load',
+}
+
 type CarouselTickerAttributes = {
   [CarouselTickerAttrNames.Delay]: number
   [CarouselTickerAttrNames.Direction]: CarouselTickerDirection
@@ -28,6 +34,7 @@ type CarouselTickerAttributes = {
   [CarouselTickerAttrNames.OverflowSize]: number
   [CarouselTickerAttrNames.PauseOnHover]: boolean
   [CarouselTickerAttrNames.Speed]: number
+  [CarouselTickerAttrNames.Trigger]: CarouselTickerTrigger
 }
 
 // Initialize Webflow interactions
@@ -81,6 +88,10 @@ const carouselTickerBooster = new Booster.Booster<
       defaultValue: 10000,
       validate: Booster.validation.isNumber,
       parse: Number,
+    },
+    [CarouselTickerAttrNames.Trigger]: {
+      defaultValue: CarouselTickerTrigger.OnLoad,
+      validate: Object.values(CarouselTickerTrigger),
     },
   },
   apply(element, data) {
@@ -283,20 +294,24 @@ const carouselTickerBooster = new Booster.Booster<
 
     // Start animation
 
-    const intersectionObserver = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            animation.play()
-            intersectionObserver.disconnect()
-            break
-          }
-        }
-      },
-      { threshold: isVertical ? 0.5 : 1 }
-    )
+    const trigger = data.get(CarouselTickerAttrNames.Trigger)
 
-    intersectionObserver.observe(element)
+    if (trigger === CarouselTickerTrigger.InView) {
+      const intersectionObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              animation.play()
+              intersectionObserver.disconnect()
+              break
+            }
+          }
+        },
+        { threshold: isVertical ? 0.5 : 1 }
+      )
+
+      intersectionObserver.observe(element)
+    } else animation.play()
 
     // Add/remove content child elements if element size changed
 
