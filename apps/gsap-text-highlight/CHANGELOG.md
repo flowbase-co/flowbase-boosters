@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-gsap-text-highlight
 
+## 1.0.3
+
+### Patch Changes
+
+- 9af8f82: Exclude comments from minification
+
 ## 1.0.2
 
 ### Patch Changes
