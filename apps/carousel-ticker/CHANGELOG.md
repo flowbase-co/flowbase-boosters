@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-carousel-ticker
 
+## 1.2.0
+
+### Minor Changes
+
+- ce4b626: Add attribute `fb-carousel-trigger`
+
 ## 1.1.1
 
 ### Patch Changes
