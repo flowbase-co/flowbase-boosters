@@ -20,8 +20,11 @@
     "attributes",
     "flowbase",
     "no code",
-    "before & after slider",
-    "before & after image slider"
+    "before and after slider",
+    "before and after image slider",
+    "comparison",
+    "comparison slider",
+    "image comparison slider"
   ],
   "author": {
     "name": "Flowbase",
