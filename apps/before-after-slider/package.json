@@ -1,0 +1,41 @@
+{
+  "name": "@flowbase-co/boosters-before-after-slider",
+  "description": "Add a before-and-after slider to display images side by side. Fully customizable and ideal for showcasing transformations or comparisons",
+  "homepage": "https://www.flowbase.co/",
+  "version": "0.0.0",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowbase-co/flowbase-boosters.git"
+  },
+  "main": "dist/before-after-slider.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "webflow",
+    "attributes",
+    "flowbase",
+    "no code",
+    "before & after slider",
+    "before & after image slider"
+  ],
+  "author": {
+    "name": "Flowbase",
+    "url": "https://www.flowbase.co/"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@flowbase-co/booster": "1.0.1"
+  },
+  "devDependencies": {
+    "@flowbase-co/tsconfig": "workspace:*",
+    "vite": "^4.2.1"
+  }
+}
