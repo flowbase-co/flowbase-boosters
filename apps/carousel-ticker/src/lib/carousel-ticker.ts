@@ -10,6 +10,8 @@ enum CarouselTickerAttrNames {
   Speed = 'fb-carousel-speed',
   Trigger = 'fb-carousel-trigger',
 
+  IgnoreInteractions = 'fb-carousel-ignore-interactions',
+
   // Elements
 
   Content = 'fb-carousel-content',
@@ -35,6 +37,7 @@ type CarouselTickerAttributes = {
   [CarouselTickerAttrNames.PauseOnHover]: boolean
   [CarouselTickerAttrNames.Speed]: number
   [CarouselTickerAttrNames.Trigger]: CarouselTickerTrigger
+  [CarouselTickerAttrNames.IgnoreInteractions]: boolean
 }
 
 // Initialize Webflow interactions
@@ -93,6 +96,11 @@ const carouselTickerBooster = new Booster.Booster<
       defaultValue: CarouselTickerTrigger.OnLoad,
       validate: Object.values(CarouselTickerTrigger),
     },
+    [CarouselTickerAttrNames.IgnoreInteractions]: {
+      defaultValue: false,
+      validate: Booster.validation.isBoolean,
+      parse: Booster.parse.stringToBoolean,
+    },
   },
   apply(element, data) {
     const contentEl = element.querySelector<HTMLElement>(
@@ -116,6 +124,10 @@ const carouselTickerBooster = new Booster.Booster<
     }
 
     if (!contentChildNodes.length) return
+
+    const ignoreInteractions = data.get(
+      CarouselTickerAttrNames.IgnoreInteractions
+    )
 
     // Direction
 
@@ -231,7 +243,8 @@ const carouselTickerBooster = new Booster.Booster<
     }
 
     duplicateNodes(duplicateCount)
-    initWebflowInteractions.call(this)
+
+    if (!ignoreInteractions) initWebflowInteractions.call(this)
 
     // If element size isn't specified, set fixed size
 
@@ -331,7 +344,8 @@ const carouselTickerBooster = new Booster.Booster<
           }
         } else {
           duplicateNodes(newDuplicateCount - duplicateCount)
-          initWebflowInteractions.call(this)
+
+          if (!ignoreInteractions) initWebflowInteractions.call(this)
         }
 
         duplicateCount = newDuplicateCount
