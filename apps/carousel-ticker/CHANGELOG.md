@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-carousel-ticker
 
+## 1.3.0
+
+### Minor Changes
+
+- 7f83d4c: Add an attribute to ignore initializing Webflow interactions
+
 ## 1.2.1
 
 ### Patch Changes
