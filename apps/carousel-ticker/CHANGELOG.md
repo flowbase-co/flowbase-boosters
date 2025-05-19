@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-carousel-ticker
 
+## 1.3.2
+
+### Patch Changes
+
+- 9781eca: Minor update
+
 ## 1.3.0
 
 ### Minor Changes

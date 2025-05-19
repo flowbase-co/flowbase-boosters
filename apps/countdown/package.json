@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-countdown",
   "description": "Countdown to a target date",
   "homepage": "https://www.flowbase.co/",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "type": "module",
   "publishConfig": {
     "access": "public"

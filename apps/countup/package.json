@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-countup",
   "description": "Easily count up to a specific number when the element is in view. Select properties via attributes.",
   "homepage": "https://www.flowbase.co/",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-tooltip
 
+## 1.1.2
+
+### Patch Changes
+
+- 9781eca: Minor update
+
 ## 1.1.0
 
 ### Minor Changes
