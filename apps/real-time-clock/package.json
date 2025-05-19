@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-real-time-clock",
   "description": "Display the time for any location",
   "homepage": "https://www.flowbase.co/",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
   "publishConfig": {
     "access": "public"

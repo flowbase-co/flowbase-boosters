@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-gsap-text-reveal
 
+## 1.0.4
+
+### Patch Changes
+
+- 9781eca: Minor update
+
 ## 1.0.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-tab-rotation-webflow
 
+## 1.2.2
+
+### Patch Changes
+
+- 9781eca: Minor update
+
 ## 1.2.0
 
 ### Minor Changes

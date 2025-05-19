@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-custom-slider-webflow
 
+## 2.0.3
+
+### Patch Changes
+
+- 9781eca: Minor update
+
 ## 2.0.1
 
 ### Patch Changes

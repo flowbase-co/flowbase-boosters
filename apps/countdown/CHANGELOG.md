@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-countdown
 
+## 2.0.2
+
+### Patch Changes
+
+- 9781eca: Minor update
+
 ## 2.0.0
 
 ### Major Changes

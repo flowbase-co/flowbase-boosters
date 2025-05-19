@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-gsap-text-highlight",
   "description": "Capture attention effortlessly with dynamic and visually stunning GSAP text highlight effects",
   "homepage": "https://www.flowbase.co/",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "publishConfig": {
     "access": "public"
