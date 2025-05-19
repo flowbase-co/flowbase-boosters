@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-tab-rotation-webflow",
   "description": "Rotate tab panes for tabs element",
   "homepage": "https://www.flowbase.co/",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "publishConfig": {
     "access": "public"

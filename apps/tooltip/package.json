@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-tooltip",
   "description": "Display informative tooltips when hovering or clicking on certain elements. Control their position, theme, animation style and more",
   "homepage": "https://www.flowbase.co/",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "publishConfig": {
     "access": "public"
