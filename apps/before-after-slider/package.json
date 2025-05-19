@@ -2,7 +2,7 @@
   "name": "@flowbase-co/boosters-before-after-slider",
   "description": "Add a before-and-after slider to display images side by side. Fully customizable and ideal for showcasing transformations or comparisons",
   "homepage": "https://www.flowbase.co/",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "publishConfig": {
     "access": "public"
