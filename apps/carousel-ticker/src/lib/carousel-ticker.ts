@@ -227,17 +227,18 @@ const carouselTickerBooster = new Booster.Booster<
     let duplicateCount = getDuplicateCount()
 
     const duplicateNodes = (count: number) => {
-      const additionalNodes: HTMLElement[][] = Array(count).fill([])
+      const additionalNodes: HTMLElement[][] = Array.from(
+        { length: count },
+        () => {
+          return contentChildNodes.map((node) => {
+            const clonedNode = node.cloneNode(true) as HTMLElement
 
-      for (let index = 0; index < count; index++) {
-        for (const node of contentChildNodes) {
-          const clonedNode = node.cloneNode(true) as HTMLElement
+            clonedNode.setAttribute('aria-hidden', 'true')
 
-          clonedNode.setAttribute('aria-hidden', 'true')
-
-          additionalNodes[index].push(clonedNode)
+            return clonedNode
+          })
         }
-      }
+      )
 
       for (const node of additionalNodes.flat()) contentEl.appendChild(node)
     }
