@@ -1,5 +1,11 @@
 # @flowbase-co/boosters-carousel-ticker
 
+## 1.3.3
+
+### Patch Changes
+
+- 2c69655: Bump Booster package version to 1.2.0
+
 ## 1.3.2
 
 ### Patch Changes
