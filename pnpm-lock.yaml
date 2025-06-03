@@ -102,8 +102,8 @@ importers:
   apps/carousel-ticker:
     dependencies:
       '@flowbase-co/booster':
-        specifier: 1.0.1
-        version: 1.0.1
+        specifier: 1.2.0
+        version: 1.2.0
     devDependencies:
       '@flowbase-co/tsconfig':
         specifier: workspace:*
@@ -819,6 +819,9 @@ packages:
 
   '@flowbase-co/booster@1.1.0':
     resolution: {integrity: sha512-yhYH7ZYuHD5YVFg/5YZe3oFLh2j1ry+6Gde/atjLjd/Jq449RgdvfRplzxk7U2munYHw/LLLo9G7owdR/MlbZA==}
+
+  '@flowbase-co/booster@1.2.0':
+    resolution: {integrity: sha512-YO6UFYJ+qlZlY96Jap5XpQWJ0kN/no+VrKEBzk5NKkwppzT0wcaJyAox9jNNepLJBCYuipiP4C2fRRKY+BRRaw==}
 
   '@jest/expect-utils@29.7.0':
     resolution: {integrity: sha512-GlsNBWiFQFCVi9QVSx7f5AgMeLxe9YCCs5PuP2O2LdjDAA8Jh9eX7lA1Jq/xdXw3Wb3hyvlFNfZIfcRetSzYcA==}
@@ -2889,6 +2892,11 @@ snapshots:
       typescript: 4.9.5
 
   '@flowbase-co/booster@1.1.0':
+    dependencies:
+      semver: 7.6.3
+      typescript: 4.9.5
+
+  '@flowbase-co/booster@1.2.0':
     dependencies:
       semver: 7.6.3
       typescript: 4.9.5
