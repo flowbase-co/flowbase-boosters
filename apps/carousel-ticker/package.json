@@ -37,6 +37,6 @@
     "vite": "^4.2.1"
   },
   "dependencies": {
-    "@flowbase-co/booster": "1.0.1"
+    "@flowbase-co/booster": "1.2.0"
   }
 }
