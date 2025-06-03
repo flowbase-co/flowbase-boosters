@@ -6,6 +6,8 @@ import {
   type BoosterRecord,
 } from './types'
 
+const BOOSTER_STATE_INITIALIZED = 'fb-booster-initialized'
+
 export class Booster<T extends BoosterRecord, K extends Element = Element>
   implements BoosterBase
 {
@@ -93,6 +95,11 @@ export class Booster<T extends BoosterRecord, K extends Element = Element>
   init() {
     const elements = this.getElements()
 
-    elements.forEach((el) => this.parse(el))
+    elements.forEach((el) => {
+      if (el.hasAttribute(BOOSTER_STATE_INITIALIZED)) return
+
+      el.setAttribute(BOOSTER_STATE_INITIALIZED, 'true')
+      this.parse(el)
+    })
   }
 }
